@@ -37,7 +37,7 @@ git status
 ```
 
 # Sincronización
-**Lo siguiente VSC con *Source Control* lo hace**
+**Lo siguiente VSC con *Source Control* lo hace despues de iniciar sección**
 
 ---
 > **Simpre antes de iniciar**
