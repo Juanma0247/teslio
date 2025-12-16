@@ -1,0 +1,534 @@
+@font-face {
+    font-family: jBM;
+    src: url(../font/jetBrainsMono.ttf);
+    font-size: 20px;
+    font-style: bold;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: ps;
+    src: url(../font/productSans.ttf);
+    /* font-size: 20px; */
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: ps_b;
+    src: url(../font/productSans_bold.ttf);
+    font-size: 20px;
+    font-style: bold;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: ps_l;
+    src: url(../font/productSans_light.ttf);
+    font-size: 20px;
+    font-style: light;
+    font-weight: light;
+}
+
+@font-face {
+    font-family: iF;
+    src: url(../font/indieFlower.ttf); 
+    font-size: 20px;
+    font-style: light;
+    font-weight: light;
+}
+
+@font-face {
+    font-family: cC;
+    src: url(../font/cascadiaCode.ttf); 
+    /* font-size: 20px; */
+    font-style: normal;
+    font-weight: normal;
+}
+
+* {    
+    --c1: #088 ;            
+    /* --c2: #fff;
+    --c3: #000; */
+    --c2: #000;
+    --c3: #fff;
+    --c4: #888;
+    --ct: #00000000;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;      
+}
+
+::-webkit-scrollbar {
+    width:  0px;
+    height: 0px;
+}
+
+.contInicio {
+    display: none;
+}
+.contJuanma {
+    display: none;
+}
+.contCodigos {
+    display: none;
+}
+.contProyectos {
+    display: none;
+}
+.contHerramientas {
+    display: none;
+}
+.contContacto {
+    display: none;
+}
+.contJuegos {
+    display: none;
+}
+
+body {
+    background-color: var(--c3);
+    height: 100vh; 
+}
+
+.background {
+    position: absolute;
+    z-index: -1;
+    margin-top: -3rem;
+    opacity: 10%;        
+    width: 100vw;
+    height: 100vh; 
+} 
+
+.contenedor {    
+    position: relative;
+    z-index: 0;
+    height: 100%; 
+}
+
+h1 {    
+    font-size: 2rem;
+    color: var(--c1);    
+    font-family: ps_b;    
+    cursor: default;
+}
+
+.titulo{
+    cursor: pointer;
+}
+
+.subtitulo {
+    font-size: 1.8rem;
+    margin: 1rem;
+    text-align: center;
+    cursor: default;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;    
+    margin-top: 10px;        
+    color: var(--c1);    
+    font-family: ps_b;    
+    cursor: default;
+}
+
+h3, h4 {    
+    margin-top: 10px;    
+    margin-left: 15px;
+    color: var(--c1);    
+    font-family: ps_b;    
+    cursor: default;
+}
+
+p {        
+    font-family: ps;    
+    font-size: 1.1rem;
+    
+    color: var(--c2);
+}
+
+strong {
+    font-family: ps_b; 
+    font-size: 1.1rem;
+    color: var(--c2);
+}
+
+.pIndicador {            
+    font-family: ps;    
+    padding: 1rem;    
+    font-size: 1rem;
+    background-color: var(--c3);
+}
+
+a {        
+    font-family: ps_b;    
+    text-decoration: none;
+    color: var(--c2);        
+}
+
+a:hover {
+    color: var(--c1);
+}
+
+button {
+    height: max-content;
+    font-family: ps;    
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--c1);
+    background-color: var(--c3);   
+    cursor: pointer;
+    padding: .4rem;      
+    border-radius: .5rem;
+    border: .2rem solid var(--c1);
+    box-shadow: .2rem .2rem 0rem var(--c1);  
+    background-color: var(--c3);
+}
+
+@keyframes click {
+    0% {
+        transform: translateX(0rem) translateY(0rem);        
+        box-shadow: .2rem .2rem 0rem var(--c1);      
+    }
+    50% {
+        transform: translateX(.2rem) translateY(.2rem);        
+        box-shadow: 0rem 0rem 0rem var(--c1);      
+    }
+    100% {
+        transform: translateX(0rem) translateY(0rem);
+        box-shadow: .2rem .2rem 0rem var(--c1);  
+    }
+}
+
+button:active {
+    animation: click .3s forwards;  
+    box-shadow: var(--ct) 2px 2px;
+}
+
+button:disabled {   
+   cursor: not-allowed;
+   opacity: 0.2;
+}
+
+.labelForElementCheck {  
+    margin-top: 1.2rem;    
+    margin-left: 1rem;   
+    color: var(--c1);
+    font-family: ps_b;    
+  }
+  
+.checkboxContainer {  
+    margin: var(--margin);  
+    margin-top: 1rem;
+    cursor: pointer;
+}
+  
+.checkboxContainer input {
+    display: none;
+}
+  
+.checkboxContainer svg {
+    width:  1.6rem;
+    height: 1.6rem;
+    overflow: visible;
+  }
+  
+.checkboxSvg {
+    fill: none;
+    stroke: var(--c2);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+    stroke-dasharray: 241 9999999;
+    stroke-dashoffset: 0;
+  }
+  
+.checkboxContainer input:checked ~ svg .checkboxSvg {
+    stroke-dasharray: 70.5096664428711 9999999;
+    stroke-dashoffset: -262.2723388671875;
+  }
+
+.input-group {
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative;    
+}
+
+input {        
+    width: calc(100% - 2.5rem);        
+    font-family: ps;
+    border: solid 1.5px var(--c4);
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;    
+    font-size: 1rem;
+    color: var(--c2);
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+input:focus, input:valid {
+    outline: none;
+    border: 1.5px solid var(--c1);
+}
+
+input:focus ~ label, input:valid ~ label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: var(--c3);
+    padding: 0 .2em;
+    color: var(--c1);
+}
+ 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+input[type=number] {
+    -moz-appearance: textfield
+}
+.custom-controls {
+    display: flex;
+    flex-direction: row; 
+    position: absolute;
+    right: 4.8rem; 
+    top: .3rem;
+    bottom: .3rem;
+    width: 2rem 
+}
+.custom-controls button {
+    margin-left: .3rem; 
+    flex: 1;
+    background: transparent;
+    /* border: none; */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+    transition: background 0.2s
+}
+.custom-controls button svg {
+    width: 1.4rem; 
+    height: 1.4rem; 
+    fill: var(--c4)  
+}
+
+.custom-controls button:hover svg {
+    fill: var(--c2)
+}
+
+
+
+
+table {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: var(--c2);
+    border-spacing: 10px;
+}
+
+td {
+    font-family: ps;
+    border: var(--c1) 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.tdIndex {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.tdIndexNoBorder {
+    border: none;
+    padding-left: 1rem;    
+}
+
+.tdIndexText {
+    font-size: 1.05rem;
+}
+
+.tdTitle {
+    border: var(--c1) 0px solid;
+    text-align: center;
+}
+
+.resultado {        
+    border-radius: .5rem;    
+}
+
+.resultado:focus, .resultado:valid {
+    outline: none;
+    border-width: 0px;
+    border-left-width: 2px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-right-width: 2px;
+}
+
+.user-label {
+    font-family: ps_b;
+    position: absolute;
+    left: 15px;
+    color: var(--c2);
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.user-label::after {
+    color: var(--c1);
+}
+
+textarea {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: calc(100% - 3.2rem);
+    font-family: ps;
+    border: solid 1.5px var(--c4);
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;    
+    font-size: 1.2rem; 
+    color: var(--c2);
+}
+
+textarea:focus, input:valid {
+    outline: none;
+    border: 1.5px solid var(--c1);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;        
+}
+
+.right {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;        
+}
+
+.marginLR {    
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.marginTL {
+    margin-top: 10px;    
+    margin-left: 15px;
+}
+
+.marginTLR {
+    margin-top: 10px;    
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+@keyframes anmtToArrowInicio {
+    0% {
+      transform: scale(1, 1) translateX(-2rem); 
+      filter: drop-shadow(0px 0px 30px var(--c2));
+    }
+    50% {      
+      transform: scale(0.9, 0.9) translateX(0); 
+      filter: drop-shadow(0px 0px 0px var(--c3)); 
+    }
+    100% {      
+      transform: scale(1, 1) translateX(-2rem);
+      filter: drop-shadow(0px 0px 30px var(--c2)); 
+    }
+}
+
+.spaceBottom {
+    height: 1rem;    
+    width: 100%;
+}
+
+  /* //////////////////////////////////////////// */
+  /* //////////////////////////////////////////// */
+  /* //////////////////////////////////////////// */
+  /* //////////////////////////////////////////// */
+  /* //////////////////////////////////////////// */
+
+  
+.spamTop {
+    display: flex;
+    flex-wrap: wrap; 
+    position: absolute;
+    text-align: center;
+    width: 100%; 
+    top: -2.4rem;
+}
+
+.icoSpamTop {
+    width: 2rem;
+    cursor: none;
+}
+
+.titleSpamTop {        
+    top: -2.2rem;    
+    font-size: 1.3rem;
+    color: var(--c1);
+    margin-left: .5rem;  
+    cursor: none;    
+}
+
+  /* //////////////////////////////////////////// */
+  /* //////////////////////////////////////////// */
+  /* //////////////////////////////////////////// */
+  /* //////////////////////////////////////////// */
+  /* //////////////////////////////////////////// */
+
+  .selectionCards{
+    display: flex;    
+    flex-wrap: wrap;
+    padding-bottom: 2rem;   
+  }
+
+  .selecccion {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .card {
+    cursor: pointer;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 190px;
+    height: 254px;
+    border-radius: 18px;
+    background: var(--c3);  
+    border: var(--c1) 2px solid;  
+  }
+  
+  .cardImg {
+    border-radius: 15px;    
+    margin-top: 6px;
+    height: 208px;
+    width: 190px;  
+  }
+  
+  .card:hover {
+    display: flex;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 190px;
+    height: 254px;
+    border-radius: 18px;  
+    background: var(--c3);  
+    border: var(--c1) 2px solid;    
+    box-shadow: 3px 3px 0px var(--c1), 3px 3px 20px var(--c4);      
+    transform: translateX(-3px) translateY(-3px);  
+  }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ArpiaZorro</title> 
+    <link rel="icon" href="./img/favicon.svg">             
+    <link rel="stylesheet" href="./css/index.css" />    
+    <link rel="stylesheet" href="./css/elements.css" />    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body)"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/jstat@1.9.6/dist/jstat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> 
+  </head>
+  <body>
+    <svg id="ocean" class="background"></svg>   
+    <div class="contenedor">            
+
+      <div id="contArpia">
+        <div id="aList"></div> 
+        <p class="ap1">Listado de participantes:</p>
+        <textarea id="ata1" required style="height: 6.5rem;"></textarea>
+        <div class="right"> 
+          <button id="ab1">Guardar</button>
+          <button id="ab2">Reporte</button>
+        </div>        
+      </div>
+
+      <div id="contZorro">
+        <h1 id="zh1">Esperé a que dé inicio la sección.</h1>                    
+        <div id="zList"></div>
+        <h1 id="loginArpia" class="fab">Gestión</h1>         
+        <div id="loginPanel" class="loginPanel">
+          <div class="panel">              
+              <div class="input-group loginArpiaInput"> 
+                <input id="lpi1" required="" type="password"> 
+                <label class="user-label">Ingrese su llave</label>
+              </div>
+              <button id="lpb1" class="buttonLoginPanel">Ingresar</button>
+              <button id="lpb2" class="buttonLoginPanel">Cancelar</button>
+          </div>
+        </div>
+      </div>
+
+    <div id="realContent">
+      <div id="titleContent"></div>
+      <div id="formContent"></div>
+      <div class="endSection">
+        <button id="esb1">Finalizar sección</button>
+      </div>
+    </div>
+
+      <!-- <div id="realContent">
+        <div class="input-group"> 
+          <input id="rci1" required="">
+          <label class="user-label">\(X\)</label>
+        </div>
+        <div class="input-group">
+          <input id="rci2" required="" type="number">
+          <label class="user-label">\(\text{Grados de libertad}\)</label> 
+        </div>
+        <p>Distribución normal.</p>
+        <div class="latex inLine" id="rcRes1"></div>
+        <div class="latex inLine" id="rcRes2"></div> 
+        <p>Distribución T-Student.</p>
+        <div class="latex inLine" id="rcRes3"></div>
+        <div class="latex inLine" id="rcRes4"></div>
+        <p>Distribución Chi-Cuadrado.</p> 
+        <div class="latex inLine" id="rcRes5"></div>
+        <div class="latex inLine" id="rcRes6"></div>
+        <div class="endSection">
+          <button id="esb1">Finalizar sección</button>
+        </div>
+      </div> -->
+
+
+      <div style="height: 2rem;"></div>
+    </div>
+    <script type="module" src="./objects/ExtT.js"></script>     
+    <script type="module" src="./js/index.js"></script>   
+  </body>
+</html>
