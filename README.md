@@ -28,7 +28,7 @@ git config --global user.email "mail"
 ## Clonar repositorio
 ```
 git clone https://github.com/Juanma0247/teslio.git
-code teslio
+cd teslio
 ```
 
 ## Verificación
