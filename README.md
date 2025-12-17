@@ -21,14 +21,15 @@ git init
 ## Iniciar sección
 > Tienes que iniciar seccion con tu usuario y mail en GitHub. Es importante que tu cuenta esté asociada al proyecto.
 ```
-git config --global user.name "user"
-git config --global user.email "mail"
+git config --global user.name "you_user"
+git config --global user.email "you_mail"
 ```
 
-## Clonar repositorio
+## Clonar repositorio e ingresar
 ```
 git clone https://github.com/Juanma0247/teslio.git
 cd teslio
+git pull origin main
 ```
 
 ## Verificación
