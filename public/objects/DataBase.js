@@ -4,13 +4,13 @@ import { getFirestore, collection, doc, setDoc, getDoc, getDocs, deleteDoc, onSn
 class DataBase {         
   constructor() {
       let key = {
-        apiKey: "AIzaSyDBxMhed4eie3ShdkdHXmx8XG630lh-P7k",
-        authDomain: "harpias.firebaseapp.com",
-        projectId: "harpias",
-        storageBucket: "harpias.firebasestorage.app",
-        messagingSenderId: "485784446208",
-        appId: "1:485784446208:web:a6208420de3a98d6c6ffe5",
-        measurementId: "G-3547MX9SM1"
+        apiKey: "AIzaSyBCMl-YozLCGBm3q3R0RYuXw3bt1T1qb64",
+        authDomain: "juamdg.firebaseapp.com",
+        projectId: "juamdg",
+        storageBucket: "juamdg.firebasestorage.app",
+        messagingSenderId: "859606265564",
+        appId: "1:859606265564:web:d24a76bad1823b08794e19",
+        measurementId: "G-ZLP83CDTDJ"
       }
       this.app = initializeApp(key)
       this.firestore = getFirestore(this.app) 

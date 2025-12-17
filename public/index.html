@@ -3,82 +3,1239 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ArpiaZorro</title> 
-    <link rel="icon" href="./img/favicon.svg">             
-    <link rel="stylesheet" href="./css/index.css" />    
-    <link rel="stylesheet" href="./css/elements.css" />    
+    <title>Juanma</title>
+    <link rel="icon" href="./img/favicon.svg">
+    <meta name="description" content="Sitio web oficial de Juan Manuel Diaz Gomez. Descubre mi trabajo, proyectos y contacto.">
+    
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/codigos.css" />
+    <link rel="stylesheet" href="./css/herramientas.css" />
+    
+    <link rel="stylesheet" href="./css/juanma.css" /> 
+    <link rel="stylesheet" href="./css/juegos.css" />
+    <link rel="stylesheet" href="./css/proyectos.css" />
+    <link rel="stylesheet" href="./css/contactos.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.css"/> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
-        onload="renderMathInElement(document.body)"></script>    
+        onload="renderMathInElement(document.body)"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>     -->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jstat@1.9.6/dist/jstat.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>  
   </head>
   <body>
-    <svg id="ocean" class="background"></svg>   
+    <svg id="ocean" class="background"></svg>
+    <div id="root"></div>
+    <div class="header">
+      <div id="menuMain" class="menu">
+        <p id="menuIndicatorMain" class="menuIndicator">0</p> 
+        <nav class="navbar">
+          <ul class="navbar__menu">
+            <li class="navbar__item" style="display: none;"> 
+              <a id="bInicio" class="navbar__link"><i data-feather="home"></i><span>Inicio</span></a>
+            </li>
+            <!-- <li class="navbar__item">
+              <a id="bJuanma" class="navbar__link"><i data-feather="user"></i><span>Sobre Juanma</span></a>        
+            </li>                  -->
+            <li class="navbar__item">
+              <a id="bProyectos" class="navbar__link"><i data-feather="folder"></i><span>Projects</span></a>        
+            </li>
+            <li class="navbar__item">
+              <a id ="bHerramientas" class="navbar__link"><i data-feather="tool"></i><span>Tools</span></a>        
+            </li>
+            <li class="navbar__item">
+              <a id="bCodigos" class="navbar__link"><i data-feather="code"></i><span>Scripts</span></a>        
+            </li>      
+            <li class="navbar__item">
+              <a id ="bContacto" class="navbar__link"><i data-feather="message-circle"></i><span>Contact</span></a>        
+            </li>
+            <li class="navbar__item"></li>  
+              <a id ="bJuegos" class="navbar__link"><i data-feather="pie-chart"></i><span>Games</span></a>               
+            </li>
+          </ul>
+        </nav>        
+      </div>    
+      <label id="menuButtonMain">
+        <input type="checkbox">
+        <svg id="menuBottonClickerMain" class="menuBottonClicker" viewBox="0 0 32 32">
+          <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+          <path class="line" d="M7 16 27 16"></path>
+        </svg>
+      </label>
+      <h1 class="titulo"></h1>
+      <div class="center spamTop">
+        <img class="icoSpamTop" src="./img/favicon.svg"/>
+        <p class="titleSpamTop">jm-247.web.app</p>
+      </div>
+    </div>        
     <div class="contenedor">            
+      <div class="contInicio">        
+        <div class="bHomeCont">       
+          <a id="bHomeJuanma" class="bHome"><i data-feather="user"></i><span>About me</span></a>
+          <a id="bHomeProyectos" class="bHome"><i data-feather="folder"></i><span>Projects</span></a>                                
+          <a id="bHomeHerramientas" class="bHome"><i data-feather="tool"></i><span>Tools</span></a>                                
+          <a id="bHomeCodigos" class="bHome"><i data-feather="code"></i><span>Codes</span></a>                                  
+          <a id="bHomeContacto" class="bHome"><i data-feather="message-circle"></i><span>Contacts</span></a>                                
+          <a id="bHomeJuegos" class="bHome"><i data-feather="pie-chart"></i><span>Games</span></a> 
+        </div>
+        <div class="center spamHomeTop">
+          <img class="icoSpamHomeTop" src="./img/favicon.svg"/>
+          <p class="titleSpamHomeTop">jm-247.web.app</p>
+        </div>
+        <div class="layers"></div>
+      </div>      
 
-      <div id="contArpia">
-        <div id="aList"></div> 
-        <p class="ap1">Listado de participantes:</p>
-        <textarea id="ata1" required style="height: 6.5rem;"></textarea>
-        <div class="right"> 
-          <button id="ab1">Guardar</button>
-          <button id="ab2">Reportes de busqueda</button>
-        </div>        
+      <div class="contJuanma">
+        <!-- <div class="juanmaHead">                 
+          <div>
+            <img src="./img/meInRuiz.jpg" class="imgJuanmaHead"/>            
+          </div>                       
+          <div class="contJuanmaHead">
+            <h1>Juan Manuel Díaz Gómez</h1>
+            <p>Nariño, Caldas - Colombia</p>
+            <p class="pc4">21 años</p>
+            <p>Tecnologo ADSI - SENA</p>
+            <p class="pc4">Estudiante Ciencias de la Computación - UNAL</p>
+          </div>          
+        </div>   -->
+        <img src="./img/cards/od.png" class="myFaceImg" />
+        <h3 id="jqs" class="jt1">Quién soy</h3>
+        <div id="cjqs">                        
+          <p class="marginLR">Hola, mi nombre es Juan Manuel Díaz Gómez, o más conocido como Juanma, soy un chico apasionado por lo que hago y con todas las ganas y entusiasmo de poder seguirlo haciendo, provengo de un pueblito llamado Las Mesas en Nariño, pero actualmente resido por cuestiones de estudio en la ciudad de Manizales en Caldas, para mí la programación representa una herramienta muy llamativa e interesante que soluciona cualquier tipo de problema informático, y se ha metido en mi cabeza como un método de vida, adoro la sensación de terminar un proyecto y que el mismo cumpla o hasta sobrepase las expectativas que tenía cuando lo inicie.</p>
+          <br>
+          <p class="marginLR">Soy consciente de lo poco que sé y aunque he tratado de aprender sobre muchas cosas para no ser muy dependiente a la hora de necesitarlas, siempre le he dado un tiempo muy importante a todo el conocimiento que abarca a la programación, y por ello desde los 17 años no he parado de aprender y practicar y estoy seguro de que lo seguiré haciendo por mucho más tiempo, amo aprender nuevas cosas y aprecio el esfuerzo que hacen las personas por impartir ese conocimiento que tienen.</p>
+          <br>
+          <p class="marginLR">Me identifico como una persona sincera, seria y metódica a la hora de trabajar, me encanta trabajar en quipo y poder lograr grandes cosas con otras personas.</p>
+          <br>
+          <p class="marginLR">No me caracterizo mucho por ser paciente con algunas personas, además de ser un poco olvidadizo y distraído.</p>
+          <br>
+        </div>
+        <h3 id="jlqph" class="jt1">Lo que puedo hacer</h3>
+        <div id="cjlqph">
+          <h4 id="jlqph_p" class="jt2">Programación</h4>
+          <div id="cjlqph_p">
+            <p class="marginLR">Mi principal habilidad es la programación, llevo programando por 4 años sin parar y siempre tratando de mejorar, a continuación muestro una tabla y un porcentaje asociado a la habilidad que tengo en cada lenguaje, herramienta o librería, tomando en cuenta que un 100% es dominar totalmente el lenguaje, por supuesto bajo mi opinión, y tomando como referencia a mis conocimientos a comparación de lo que sería dominar por completo el lenguaje.</p>
+            <div style="display: flex; justify-content: center;">
+              <table>
+                <tr>
+                  <td class="tdTitle" id="jt11">⫷⫸</td>                                            
+                  <td class="tdTitle">Lenguaje</td>
+                  <td class="tdTitle">Manejo</td>
+                  <td class="tdTitle">Experiencia</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/languages/java.svg"/></td>
+                  <td>Java</td>
+                  <td>70%</td>
+                  <td>4 años</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/languages/python.svg"/></td>
+                  <td>Python</td>
+                  <td>85%</td>
+                  <td>1 año</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/languages/javascript.svg"/></td>
+                  <td>JavaScript</td>
+                  <td>65%</td>
+                  <td>2 años</td>          
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/languages/kotlin.svg"/></td>
+                  <td>Kotlin</td>
+                  <td>80%</td>
+                  <td>3 años</td>
+                </tr>     
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/firebase.svg"/></td>            
+                  <td>Firebase</td>            
+                  <td>80%</td>
+                  <td>3 años</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/mysql.svg"/></td>            
+                  <td>mySQL</td>            
+                  <td>60%</td>
+                  <td>4 años</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/html.svg"/></td>
+                  <td>HTML</td>
+                  <td>95%</td>
+                  <td>4 años</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/css.svg"/></td>
+                  <td>CSS</td>
+                  <td>85%</td>
+                  <td>4 años</td>
+                </tr>
+                <tr>
+                  <td style="background-color: #000;"><img class="icoLenguajes" 
+                  src="./img/LaTex.svg"/></td>                
+                  <td>LaTex</td>                
+                  <td>60%</td>
+                  
+                  <td>1 año</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/nodejs.svg"/></td>
+                  <td>NODE</td>
+                  <td>20%</td>
+                  <td>1 año</td>
+                  
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/git.svg"/></td>
+                  <td>Git</td>
+                  <td>20%</td>
+                  <td>1 año</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/gsap.svg"/></td>
+                  <td>GSAP</td>
+                  <td>60%</td>
+                  <td>1 año</td>
+                </tr>
+                <tr>                      
+              </table>
+            </div>
+          </div>
+          
+          <h4 id="jlqph_d" class="jt2">Diseño</h4>
+          <div id="cjlqph_d">
+            <p class="marginLR">Lo poco que se sobre diseño es con cursos muy básicos sobre algunas herramientas de adobe, Blender, OBS, FLS entre otros, mi experiencia en estos campos aunque es muy reducida, creo que es suficiente para defenderme y hacer pequeños diseños, por supuesto sin de meritar el trabajo admirable de algunos diseñadores gráficos, a continuación muestro una tabla y un porcentaje asociado a la habilidad que tengo en cada herramienta tomando en cuenta que un 100% es dominar totalmente la misma, por supuesto bajo mi opinión, y tomando como referencia a mis conocimientos a comparación de lo que sería dominar por completo esta.</p>
+            <div style="display: flex; justify-content: center;">
+              <table>
+                <tr>
+                  <td class="tdTitle" id="jt21">⩷</td>                            
+                  <td class="tdTitle">Herramienta</td>
+                  <td class="tdTitle">Manejo</td>
+                  <td class="tdTitle">Experiencia</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/illustrator.svg"/></td>
+                  <td>Illustrator</td>
+                  <td>80%</td>
+                  <td>4 años</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/photoshop.svg"/></td>
+                  <td>Photoshop</td>
+                  <td>75%</td>
+                  <td>4 años</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/premiere.svg"/></td>
+                  <td>Premiere</td>
+                  <td>65%</td>
+                  <td>2 años</td>          
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/xd.svg"/></td>
+                  <td>Xd</td>
+                  <td>90%</td>
+                  <td>2 años</td>
+                </tr>                    
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/animate.svg"/></td>            
+                  <td>Animate</td>            
+                  <td>30%</td>
+                  <td>1 año</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/indesign.svg"/></td>
+                  <td>InDesign</td>
+                  <td>75%</td>
+                  <td>2 años</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/blender.svg"/></td>
+                  <td>Blender</td>
+                  <td>30%</td>
+                  <td>1 año</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/obs.svg"/></td>
+                  <td>OBS</td>                
+                  <td>80%</td>
+                  <td>2 años</td>
+                </tr>            
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/flStudio.svg"/></td>
+                  <td>FLS</td>                
+                  <td>10%</td>
+                  <td>1 año</td>
+                </tr> 
+              </table>
+            </div>
+          </div>
+          
+          <h4 id="jlqph_o" class="jt2">Ofimática</h4>
+          <div id="cjlqph_o">
+            <p class="marginLR">En cuanto a 
+              Ofimática supongo que tengo una habilidad considerable y equivalente a la de muchas otras personas pero tambien se que estos programas tienen cada uno muchas mas herramientas que pueden ser explotadas, a continuación muestro una tabla y un porcentaje asociado a la habilidad que tengo en cada programa, tomando en cuenta que un 100% es dominar totalmente el mismo, por supuesto bajo mi opinión, y tomando como referencia a mis conocimientos a comparación de lo que sería dominar por completo este.</p>
+            <div style="display: flex; justify-content: center;">
+              <table>
+                <tr>
+                  <td class="tdTitle" id="jt31"></td>                            
+                  <td class="tdTitle">Programa</td>
+                  <td class="tdTitle">Manejo</td>
+                  <td class="tdTitle">Experiencia</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/visualBasic.svg"/></td>
+                  <td>Visual Basic</td>
+                  <td>10%</td>                
+                  <td>1 año</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/excel.svg"/></td>
+                  <td>Excel</td>
+                  <td>75%</td>
+                  <td>6 años</td>
+                </tr>              
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/powerPoint.svg"/></td>
+                  <td>Power Point</td>
+                  <td>80%</td>
+                  <td>6 años</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/word.svg"/></td>
+                  <td>Word</td>
+                  <td>90%</td>
+                  <td>8 años</td>          
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/publisher.svg"/></td>            
+                  <td>Publisher</td>            
+                  <td>60%</td>
+                  <td>2 años</td>
+                </tr>
+                <tr>
+                  <td><img class="icoLenguajes" src="./img/access.svg"/></td>
+                  <td>Access</td>
+                  <td>15%</td>
+                  <td>1 año</td>
+                </tr>    
+              </table>
+            </div>
+          </div>                 
+        </div>
+        <h3 id="jlqhh" class="jt1">Lo que he hecho</h3>
+        <div id="cjlqhh">                        
+          
+          <div id="jlqhh_icfes" class="contToPage">        
+            <h4 class="jt2">Icfes para disciplinados</h4>
+            <a class="aToPage" href="https://icfesparadisciplinados.github.io/pages/login.html" target="_blank">
+              <img class="icoToPage" src="./img/icfes.svg"/>
+              <p class="pToPage">Inicio</p>
+              <img class="xToPage" src="./img/x.svg"/>
+            </a>                
+          </div>
+          <div id="cjlqhh_icfes">          
+            <p class="marginLR">Este proyecto surgió bajo la pequeña idea de compartir material relacionado con las pruebas saber 11, para poder ayudar a estudiantes que están por presentarlas, por el momento contamos con más de 600 documentos.</p>              
+            <p class="marginTLR">Para poder iniciar sección usa</p>
+            <p class="marginTLR">NÚMERO DE DOCUMENTO: 0123456789</p>
+            <p class="marginLR">CONTRASEÑA: ABCD</p>          
+          </div>          
+          <div id="jlqhh_arcur" class="contToPage">        
+            <h4 class="jt2">Catalogo boutique Arcur</h4>
+            <a class="aToPage" href="https://boutiquearcurcolombia.web.app/" target="_blank">
+              <img class="icoToPage" src="./img/arcur.svg"/>
+              <p class="pToPage">Inicio</p>
+              <img class="xToPage" src="./img/x.svg"/>
+            </a>                
+          </div>
+          <div id="cjlqhh_arcur">          
+            <p class="marginLR">Este es un pequeño proyecto que muestra el catálogo disponible de la marca Colombiana de ropa Arcur, además aunque por supuesto no se muestra en la página, la misma tiene implementado un sistema CRUD de administración de productos.</p>               
+          </div>          
+        </div>
       </div>
 
-      <div id="contZorro">
-        <h1 id="zh1">Esperé a que dé inicio la sección.</h1>                    
-        <div id="zList"></div>
-        <h1 id="loginArpia" class="fab">Gestión</h1>         
-        <div id="loginPanel" class="loginPanel">
-          <div class="panel">              
-              <div class="input-group loginArpiaInput"> 
-                <input id="lpi1" required="" type="password"> 
-                <label class="user-label">Ingrese su llave</label>
+      <div class="contCodigos">
+        <p class="pCodigos">Si lo deseas puedes acceder a mi pequeño repositorio de Python con:</p>
+        <button class="buttonsCodes" id="ccb1">Copiar</button>
+        <a class="p aLink" href="https://juamdg.web.app/jm.py" target="_blank">https://juamdg.web.app/jm.py</a>
+        <br>            
+        <p class="pCodigos">Para instalar el archivo directamente puedes usar:</p>      
+        <div style="display: flex;">
+          <button class="buttonsCodes" style="margin-top: 2.2rem" id="ccb2">Copiar</button>
+          <pre class="auxCode"><code class="language-python">!wget juamdg.web.app/jm.py
+import jm</code></pre>      
+        </div>        
+        <p class="pCodigos">Algunos de los de codigos:</p>
+      </div>
+      
+      <div class="contProyectos color3">         
+        <div class="selecccionProyectos selectionCards">
+          <div id="cardp13" class="card">
+            <h2>Cross matrix</h2> 
+            <img class="cardImg" src="./img/cards/od.png"/>
+          </div>
+          <div id="cardp12" class="card">
+            <h2>Sorting</h2> 
+            <img class="cardImg" src="./img/cards/p12.png"/> 
+          </div>
+          <div id="cardp11" class="card">
+            <h2>Fanctal</h2> 
+            <img class="cardImg" src="./img/cards/p11.png"/>
+          </div>
+          <div id="cardp10" class="card">
+            <h2>Bernoulli</h2>
+            <img class="cardImg" src="./img/cards/p10.png"/> 
+          </div> 
+          <div id="cardp7" class="card">
+            <h2>F.D. Normal</h2>
+            <img class="cardImg" src="./img/cards/p7.png"/>
+          </div>
+          <div id="cardp8" class="card">
+            <h2>F.D. T-Student</h2>
+            <img class="cardImg" src="./img/cards/p8.png"/>
+          </div>
+          <div id="cardp9" class="card">
+            <h2>F.D χ²</h2>   
+            <img class="cardImg" src="./img/cards/p9.png"/> 
+          </div> 
+          <div id="cardp1" class="card">
+            <h2>Cifrado Hill</h2>          
+            <img class="cardImg" src="./img/cards/p1.png"/>          
+          </div>
+          <div id="cardp2" class="card">
+            <h2>Sets</h2>          
+            <img class="cardImg" src="./img/cards/p2.png"/>          
+          </div>
+          <div id="cardp3" class="card">
+            <h2>S.E.Cantor</h2>          
+            <img class="cardImg" src="./img/cards/p3.png"/> 
+          </div>          
+          <div id="cardp6" class="card">
+            <h2>Ruffini</h2>          
+            <img class="cardImg" src="./img/cards/p6.png"/> 
+          </div>
+          <div id="cardp4" class="card">
+            <h2>Voice</h2>          
+            <img class="cardImg" src="./img/cards/p4.png"/>
+          </div>
+          <div id="cardp5" class="card">
+            <h2>Fractions</h2>
+            <img class="cardImg" src="./img/cards/p5.png"/>
+          </div>
+        </div>      
+
+        <div class="p1Cont">
+          <h1 class="subtitulo">Hill Cipher</h1>
+          <div class="input-group">
+            <input id="p1i1" required="" type="text">
+            <label class="user-label">Alphabet</label>
+          </div>
+          <div class="input-group">            
+            <input id="p1i2" required="" type="text">
+            <label class="user-label">Text</label>
+            <p class="p1Error" id="p1e1"></p>
+          </div>        
+          <div class="input-group">
+            <input id="p1i3" required="" type="text">
+            <label class="user-label">Frase a cifrar o descifrar</label>
+          </div>
+          <div class="center">
+            <p style="margin-left: 15px; margin-right: 15px">Frase cifrada</p>
+            <input class="resultado" id="p1r1"  placeholder="..."></input> 
+          </div>
+          <div class="center">
+            <p style="margin-left: 15px; margin-right: 15px">Frase descifrada</p>
+            <input class="resultado" id="p1r2"  placeholder="..."></input> 
+          </div>
+          
+          <div class="p1ContOptions">
+            <h2 id="p1Introduction" class="p1Option">Introducción</h2>
+            <h2 id="p1Instructions" class="p1Option">Instrucciones</h2>
+            <h2 id="p1Process" class="p1Option">Proceso</h2>
+          </div>
+
+          <div id="p1ContIntroduction" style="display: none;">
+            <div  class="p1Descripcion" style="max-width: max-content;">
+              El cifrado Hill es un método criptográfico desarrollado por el matemático Lester S. Hill en 1929. 
+              Se basa en álgebra lineal y utiliza matrices para transformar bloques de texto plano en texto cifrado. 
+              A diferencia de cifrados más simples como el César, el cifrado Hill opera sobre grupos de letras 
+              simultáneamente, lo que lo hace considerablemente más resistente al análisis de frecuencias.
+              <br><br>
+              El sistema funciona convirtiendo cada carácter del alfabeto en un número, agrupando estos números 
+              en vectores, y luego multiplicándolos por una matriz clave módulo el tamaño del alfabeto. La seguridad 
+              del cifrado depende de mantener secreta la matriz clave y de que esta sea invertible en aritmética modular. 
+            </div>                            
+          </div>
+        
+          <div id="p1ContInstructions" style="display: none;">
+            <div class="p1Descripcion" style="max-width: 90% ;">
+              <strong>1. Define el alfabeto</strong> En el campo <strong>"Alphabet"</strong>, ingresa todos los caracteres que deseas utilizar. 
+                Por defecto incluye letras minúsculas, números y espacio: <code>abcdefghijklmnopqrstuvwxyz1234567890 </code>
+                <br>
+                <strong>Importante:</strong> Puedes personalizar este alfabeto según tus necesidades. 
+                Cualquier carácter que no esté en el alfabeto será ignorado automáticamente. 
+                El orden de los caracteres es crucial, ya que determina su valor numérico.                              
+              <br><br>
+              <strong>2. Ingresa la clave de cifrado</strong> En el campo <strong>"Text"</strong>, escribe la clave que se usará para generar la matriz de cifrado. 
+                La cantidad de caracteres debe ser un cuadrado perfecto (4, 9, 16, 25...) para formar una matriz 
+                cuadrada. Por ejemplo, una clave de 4 caracteres como <code>2024</code> generará una matriz 2×2.
+                <br>
+                <strong>Nota:</strong> No todas las claves funcionan. La matriz resultante debe tener un determinante 
+                coprimo con el tamaño del alfabeto. Si tu clave no es válida, la herramienta mostrará un mensaje de error 
+                indicando si el problema es "Determinante = 0" o "Sin inverso modular".
+              <br><br>
+              <strong>3. Escribe el mensaje</strong> En el campo <strong>"Frase a cifrar o descifrar"</strong>, ingresa el texto que deseas procesar. 
+                Por ejemplo: <code>4lg3br4 1in341</code>
+                <br> 
+                La herramienta cifrará y descifrará automáticamente tu mensaje, mostrando los resultados en los 
+                campos inferiores. Si el mensaje descifrado coincide con el original, significa que la clave es válida.              
+            </div>
+          </div>
+          
+          <div id="p1ContProcess" style="display: none;">
+            <h3>Representación numérica de caracteres</h3>
+            <div class="p1Descripcion">
+              El primer paso es asignar a cada carácter del alfabeto un valor numérico único. Si el alfabeto tiene \(n\) caracteres, entonces cada carácter \(c_i\) se mapea a un número en el rango \([0, n-1]\). Esta asignación permite transformar el texto en vectores numéricos que pueden ser manipulados algebraicamente.
+            </div>
+            <div class="latex" id="p1TablaDeCaracteres"></div>
+            
+            <h3>Matriz de cifrado</h3>
+            <div class="p1Descripcion">
+              La matriz de cifrado \(C\) es una matriz cuadrada de orden \(k \times k\) construida a partir de la clave. Para que el cifrado sea reversible, esta matriz debe ser invertible módulo \(n\), es decir, debe existir \(C^{-1}\) tal que \(C \cdot C^{-1} \equiv I \pmod{n}\). La condición necesaria es que \(\det(C)\) sea coprimo con \(n\), es decir, \(\gcd(\det(C), n) = 1\).
+            </div>
+            <div class="latex" id="p1MatrizDeCifrado"></div>
+            
+            <h3>Matrices</h3>
+            <div class="p1Descripcion">
+              El texto a cifrar se divide en bloques de \(k\) caracteres. Cada bloque se convierte en un vector columna \(\mathbf{v} = [v_1, v_2, \ldots, v_k]^T\) usando la representación numérica. Si el último bloque tiene menos de \(k\) caracteres, se completa con caracteres de relleno (padding), típicamente el último carácter del alfabeto.
+            </div>
+            <div class="latex" id="p1Matries"></div>
+            
+            <h3>Multiplicación por la matriz de cifrado</h3>
+            <div class="p1Descripcion">
+              Cada vector \(\mathbf{v}\) se cifra mediante la operación \(\mathbf{c} = C \cdot \mathbf{v} \pmod{n}\), donde \(\mathbf{c}\) es el vector cifrado. La operación módulo \(n\) asegura que todos los valores resultantes estén en el rango \([0, n-1]\) y puedan ser convertidos de vuelta a caracteres. Formalmente: \(\mathbf{c}_i = \left(\sum_{j=1}^{k} C_{ij} \cdot v_j\right) \bmod n\).
+            </div>
+            <div class="latex" id="p1MCPorMatrices"></div>
+            
+            <h3>Matriz inversa (matriz de descifrado)</h3>
+            <div class="p1Descripcion">
+              Para descifrar, necesitamos la matriz inversa \(C^{-1}\) módulo \(n\). Primero se calcula la inversa clásica de \(C\) usando eliminación de Gauss-Jordan, obteniendo una matriz de fracciones. Luego, cada elemento fraccionario \(\frac{a}{b}\) se convierte a su equivalente modular: \(a \cdot b^{-1} \pmod{n}\), donde \(b^{-1}\) es el inverso multiplicativo de \(b\) módulo \(n\), encontrado mediante el algoritmo extendido de Euclides o búsqueda exhaustiva.
+            </div>
+            <div class="latex" id="p1MCInversa"></div>
+            
+            <h3>Multiplicación por la matriz inversa</h3>
+            <div class="p1Descripcion">
+              El descifrado se realiza aplicando \(\mathbf{v} = C^{-1} \cdot \mathbf{c} \pmod{n}\) a cada vector cifrado \(\mathbf{c}\). Esta operación recupera los vectores originales \(\mathbf{v}\), que luego se convierten de vuelta a caracteres usando la tabla de representación numérica. La corrección del descifrado se verifica comparando el texto original con el texto descifrado: si \(C \cdot C^{-1} \equiv I \pmod{n}\), entonces \(C^{-1} \cdot (C \cdot \mathbf{v}) \equiv \mathbf{v} \pmod{n}\).
+            </div>
+            <div class="latex" id="p1MCIPorMatrices"></div>
+          </div>      
+          <div class="spaceBottom"></div>        
+        </div>
+        
+                
+        <div class="p2Cont">
+          <h1 class="subtitulo p2subtitulo">Conjuntos</h1>
+          <div id="p2Options0" class="center p2Options"></div>  
+          <div style="display: flex;" class="center p2InputSets">            
+            <div class="input-group"> 
+              <input id="p2i1" required="" type="text" class="p2input">
+              <label class="user-label">Conjunto A</label>
+            </div>
+            <button id="p2bchange" style="margin-top: .7rem;">
+              <img src="./img/change.svg" class="p2icos"/>
+            </button> 
+            <button id="p2bsetSet" style="margin-top: .7rem; margin-left: .7rem;">
+              <img src="./img/keys.svg" class="p2icos"/>
+            </button>  
+            <div class="input-group"> 
+              <input id="p2i2" required="" type="text" class="p2input">
+              <label class="user-label">Conjunto B</label>
+            </div>
+          </div>          
+          <div id="p2Options1" class="center p2Options"></div> 
+          <div id="p2Options2" class="center p2Options"></div> 
+          <div id="p2Options3" class="center p2Options"></div> 
+          <div id="p2Options4" class="center p2Options"></div> 
+          <div class="latex center p2Latex" id="p2Res"></div>
+          <div id="p2VeenDiagram" class="center"></div>  
+        </div> 
+
+
+        <div class="p3Cont">                                     
+          <div style="display: flex; flex-wrap: wrap;"> 
+            <h1 class="subtitulo">Secuencia de emparejamiento de <i>Cantor</i></h1>
+            <div id="p3ggbContainer"></div>         
+            <div id="p3CalcContainer">              
+              <div class="center"> 
+                <div class="input-group" style="margin: 1rem;">
+                  <input id="p3i1" required="" type="text" style="width: 5rem;" value="4">
+                  <label class="user-label">\(p\) (\(eje \) \(x\))</label>              
+                </div>    
+                <div class="input-group" style="margin: 1rem;">
+                  <input id="p3i2" required="" type="text" style="width: 5rem;" value="3"> 
+                  <label class="user-label">\(q\) (\(eje \) \(y\))</label>
+                </div>              
+                <button id="p3b1">Generar</button>
+              </div>              
+              <div id="p3Process">
+                <p id="p3Prosessp1" class="p3Processp">\(f\) representa la función de asignación de cantor para un \(\mathbb{Q^{+}}\) de la forma \(\frac{p}{q}\)</p> 
+                <p id="p3Prosessp2" style="text-align: center" class="p3Processp"></p> 
+                <p id="p3Prosessp3" class="p3Processp">Luego remplazando \(p\) y \(q\) en \(f\) obtenemos</p>
+                <p id="p3Prosessp4" style="text-align: center" class="p3Processp"></p> 
+                <p id="p3Prosessp5" class="p3Processp"></p> 
+                <p class="p3Processp" >La secuencia de emparejamiento empieza en el punto \((0,0)\)  y recorre todos los puntos en el plano cartesiano con una especie de zigzagueo, hasta llegar a la coordenada indicada. 
+                <p class="p3Processp">Tome en cuenta que para poder manejar cualquier valor \(p \in \mathbb{Z}\) se debería aplicar otra función que envía a \(2p\) si \(p\geq 0\) de lo contrario envia \(p\) a \(-2p - 1\), esto se hace con \(p\) debido a que esta puede tomar el signo de la fracción.</p>   
+                <p class="p3Processp">En la teoría de conjuntos, esta secuencia se usa para demostrar que el conjunto de los \(\mathbb{Q}\) tiene la misma cardinalidad que el conjunto de los \(\mathbb{N}\).</p> 
+                <br><br>
+                <a class="p3Processp" href="https://gamma.app/docs/Georg-Cantor--qphdv8v760hujtz?mode=present#card-wer5nwhu8a8z40j">Presentation </a> 
               </div>
-              <button id="lpb1" class="buttonLoginPanel">Ingresar</button>
-              <button id="lpb2" class="buttonLoginPanel">Cancelar</button>
+            </div>          
+          </div>          
+        </div> 
+
+        <div class="p4Cont">  
+          <h1 class="subtitulo">Voice Register</h1>       
+          <div class="center"> 
+            <div class="input-group">
+              <input id="p4i1" required="" type="text" style="width: 10rem;" >
+              <label class="user-label">Nombre del audio</label>              
+            </div>              
+            <audio style="margin-top: 0.5rem; margin-left: 0.5rem" id="audioPreview" controls></audio> 
+          </div>
+          <div class="center">
+            <button style="margin-top: 0.5rem; margin-left: 0.5rem" id="startRecording">Iniciar Grabación</button>
+            <button style="margin-top: 0.5rem; margin-left: 0.5rem" id="stopRecording" disabled>Detener Grabación</button>
+            <button style="margin-top: 0.5rem; margin-left: 0.5rem" id="uploadAudio" disabled>Subir Audio</button>            
+          </div>          
+          <p style="font-size: 1.5rem;margin-top: 1rem; margin-left: 2rem ">Audios guardados</p> 
+          <div id="audiosGuardados" class="center">            
+          </div>                                 
+        </div> 
+
+        <div class="p5Cont">  
+          <h1 class="subtitulo">Fractions</h1>                 
+          <div class="marginTL">
+            <input id="p5i1" class="inputFractions" value="1/2">              
+            <div id="p5ShowImput"></div>
+          </div>                                
+        </div> 
+
+        <div class="p6Cont">
+          <h1 class="subtitulo">Metodo de Ruffini</h1>
+          <div class="input-group">
+            <input id="p6i1" required="" type="text" value="7 8 0 4">
+            <label class="user-label">Coeficientes</label>
+          </div>
+          <h2 class="inLine">Polinomio:</h2>      
+          <div class="latex inLine" id="p6Preview"></div>
+          <br>
+          <h2 class="inLine">Procesó:</h2>
+          <div class="latex inLine" id="p6Process"></div>
+          <div class="latex inLine" id="p6Process2"></div> 
+          <br>
+          <h2 class="inLine">Resultado:</h2>
+          <div class="latex inLine" id="p6Res"></div>
+        </div> 
+
+        <div class="p7Cont">
+          <h1 class="subtitulo">Función de distribución normal.</h1> 
+          <div style="display: flex; flex-wrap: wrap;">
+            <div id="p7ggbContainer" class="ggbContainer"></div>          
+            <div id="p7CalcContainer" class="calcContainer">
+              <div class="input-group"> 
+                <input id="p7i1" required="">
+                <label class="user-label">\(X\)</label>
+              </div>
+              <div class="input-group">
+                <input id="p7i2" required="">
+                <label class="user-label">\(\mu\)</label>
+              </div>
+              <div class="input-group">
+                <input id="p7i3" required="">
+                <label class="user-label">\(\sigma\)</label>
+              </div>
+              <div class="latex inLine" id="p7Res1"></div>
+              <div class="latex inLine" id="p7Res2"></div> 
+            </div>
+          </div>
+        </div>
+
+        <div class="p8Cont">
+          <h1 class="subtitulo">Función de distribución T-Student.</h1> 
+          <div style="display: flex; flex-wrap: wrap;">
+            <div id="p8ggbContainer" class="ggbContainer"></div>          
+            <div id="p8CalcContainer" class="calcContainer">
+              <div class="input-group">
+                <input id="p8i1" required="">
+                <label class="user-label">\(P(X) \quad o \quad X\)</label>  
+              </div>
+              <div class="input-group">
+                <input id="p8i2" required="">
+                <label class="user-label">\(\text{Grados de libertad}\)</label> 
+              </div>
+              <div class="latex inLine" id="p8Res1"></div>
+              <div class="latex inLine" id="p8Res2"></div> 
+            </div>
+          </div>
+        </div>
+
+        <div class="p9Cont">
+          <h1 class="subtitulo">Función de distribución \(\scriptsize \chi^{2}\)</h1> 
+          <div style="display: flex; flex-wrap: wrap;">
+            <div id="p9ggbContainer" class="ggbContainer"></div>          
+            <div id="p9CalcContainer" class="calcContainer">
+              <div class="input-group">
+                <input id="p9i1" required="">
+                <label class="user-label">\(P(X) \quad o \quad X\)</label>   
+              </div>
+              <div class="input-group">
+                <input id="p9i2" required="">
+                <label class="user-label">\(\text{Grados de libertad}\)</label> 
+              </div>
+              <div class="latex inLine" id="p9Res1"></div>
+              <div class="latex inLine" id="p9Res2"></div> 
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="p10Cont">
+          <h1 class="subtitulo">Desigualdad de Bernoulli para \(x\geq -2\)</h1>
+          <div style="display: flex; flex-wrap: wrap;">
+            <div id="p10ggbContainer" class="ggbContainer"></div>          
+            <div id="p10CalcContainer" class="calcContainer">
+              <div class="input-group">
+                <input id="p10i1" required="" type="number" value="21">
+                <label class="user-label">\(n \in \mathbb{N}\)</label> 
+              </div>
+              <div class="input-group">
+                <input id="p10i2" required="" pattern="^-?\d+([.]\d+)?$" inputmode="decimal" value="1">  
+                <label class="user-label">\(a \in \mathbb{R}\)</label> 
+              </div>
+              <div style="display: flex; margin-left: 1rem;">
+                <label class="checkboxContainer">
+                  <input id="p10cb1" type="checkbox">
+                  <svg viewBox="0 0 64 64">
+                    <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" class="checkboxSvg"></path>
+                  </svg>
+                </label>
+                <label class="labelForElementCheck">\((\text{impares} = 2n+1)\)</label>
+              </div>                                          
+              <div class="p10Processp">
+                <a href="https://drive.google.com/uc?export=download&id=1-Sh9vxZMl7W3Fppa1w7_DbjFKL73qOzK">Demostración.</a>
+                <a href="https://drive.google.com/uc?export=download&id=1sLSSU_sDr2LXx7PPFbmhGih_uchMjdfn">Demostración 2.</a>
+              </div>              
+            </div>            
+          </div>
+        </div>
+
+        <div class="p11Cont">
+          <h1 id="p11Title" class="subtitulo">Fanctal</h1>
+          <div class="p11Content"> 
+            <svg id="fractal"></svg>
+            <div>
+              <div class="p11inputs">  
+                <div class="input-group p11InputGroup"> 
+                  <input id="p11i1" required="" type="number" min="1" step="1" value="6">   
+                  <label class="user-label">\(\text{\textbf{n}}\)</label>
+                </div>                                 
+                <div class="input-group p11InputGroup">
+                    <input id="p11i2" required="" type="number" min = "0" step="1" value="3">
+                    <label class="user-label">\(\text{\textbf{a}}\)</label>
+                </div>  
+                <div class="input-group p11InputGroup">
+                  <input id="p11i3" required="" type="number" >
+                  <label class="user-label">\(\text{\textbf{Profundidad}}\)</label> 
+                </div>
+              </div>
+              <div class="p11buttons">
+                <button id="p11b1" class="p11Button">Documentación</button>
+                <button id="p11b2" class="p11Button">Descargar SVG</button> 
+              </div> 
+              <div id="p11ResArea"></div> 
+            </div>                           
+            <div class="p11AreaSection">
+                <h3>Cálculo de Área A(N)</h3>
+                <div id="p11AreaCalc" class="p11AreaCalc"></div>
+            </div>            
+          </div>
+        </div>
+
+        <div class="p12Cont">
+          <h1 class="subtitulo">Algoritmos de ordenamiento.</h1>
+          <div >
+            <div class="p12ControlPanel">
+              <div class="input-group">
+                <input id="p12i1" required="" type="number" class="p12imput">
+                <label class="user-label" id="p12l1">Tamaño</label>
+              </div>
+              <div class="input-group">
+                <input id="p12i2" required="" type="number" class="p12imput">
+                <label class="user-label">Delay</label>
+              </div>            
+              <button id="p12bTim" class="p12button"><img src="./img/play.svg"/>Tim</button>
+              <button id="p12bMerge" class="p12button"><img src="./img/play.svg"/>Merge</button>
+              <button id="p12bHeap" class="p12button"><img src="./img/play.svg"/>Heap</button>
+              <button id="p12bQuick3" class="p12button"><img src="./img/play.svg"/>Quick3</button>            
+              <button id="p12bQuick" class="p12button"><img src="./img/play.svg"/>Quick</button>              
+              <button id="p12bShell" class="p12button"><img src="./img/play.svg"/>Shell</button>             
+              <button id="p12bInsertion" class="p12button"><img src="./img/play.svg"/>Insertion</button>
+              <button id="p12bSelection" class="p12button"><img src="./img/play.svg"/>Selection</button>
+              <button id="p12bBubble" class="p12button"><img src="./img/play.svg"/>Bubble</button> 
+              
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap;">
+              <svg id="p12GCont" height="100vh" width="100vw"></svg>
+          </div>
+        </div>
+
+        <div class="p13Cont">          
+          <div id="p13container">
+            <h1 class="p13title">Cross matrix</h1> 
+
+            <div id="p13canvas"></div>
+            
+            <div class="p13input1">              
+              <div class="control">
+                <label>Inicio: <span id="p13StartRowValue">0</span></label>
+                <input type="range" id="p13StartRow" min="0" max="29" value="0">
+              </div>
+            </div>
+
+            <div class="p13presets">
+              <p class="p13prefunc">\(f(x, y) aqui puede ir la funcion en latex\)</p>
+            </div>
+
+            <div class="p13input2">                               
+              <div class="input-group">
+                <input id="p13i21" required="" value="0 10">
+                <label class="user-label">\(x_0 \quad x_n\)</label> 
+              </div>
+              <div class="input-group" >
+                <input id="p13i22" required="" value="0 10">
+                <label class="user-label">\(y_0 \quad  y_n\)</label>
+              </div> 
+              <div class="p13functions">
+                <button id="p13b21">Generar</button>
+                <div class="input-group"> 
+                  <input id="p13i23" required="" value="10*sin(x) + 8*cos(y*1.5) + 5*sin(x*y/10) + 20">
+                  <label class="user-label">\(f(x, y)\)</label>
+                </div> 
+                <p id="p13presetsBotton">Funcines predefinidas</p>
+              </div>              
+            </div>
+
+            <div class="p13output">
+              <span class="label">Costo total: </span>
+              <span class="value highlight" id="p13TotalCost">0</span>
+            </div>
           </div>
         </div>
       </div>
 
-    <div id="realContent">
-      <div id="titleContent"></div>
-      <div id="formContent"></div>
-      <div class="endSection">
-        <button id="esb1">Finalizar sección</button>
+      <div class="contHerramientas">
+        <div class="selecccionHerramientas selectionCards">
+          <div id="cardh1" class="card">
+            <h2>Editor de texto</h2> 
+            <img class="cardImg" src="./img/cards/h1.png"/>          
+          </div>
+          <div id="cardh2" class="card">
+            <h2>Coords MC</h2>                    
+            <img class="cardImg" src="./img/cards/h2.png"/>          
+          </div>
+          <div id="cardh3" class="card">
+            <h2>Metrica</h2>                    
+            <img class="cardImg" src="./img/cards/od.png"/>          
+          </div>
+        </div> 
+        <div class="h1Cont">
+          <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center;">
+            <h1 class="subtitulo" style="width: 100%;">Editor de texto</h1>
+            <div class="input-group" style="width: 100%;">
+              <input id="h1i1" required="" type="text">
+              <label class="user-label">str</label>
+            </div>      
+            <textarea id="h1ta1" style="height: 20rem;"></textarea>
+            <p id="h1p1" class="pIndicador" style="top: 5.9rem; left: 85%; position: absolute;">0</p>   
+  
+            <div class="input-group" style="width: calc(50% - 10px);">
+              <input id="h1i2" required="" type="text">
+              <label class="user-label">_str</label>
+            </div>
+            <div class="input-group" style="width: calc(50% - 10px);">
+              <input id="h1i3" required="" type="text">
+              <label class="user-label">str_</label>
+            </div>
+            <div class="input-group" style="width: calc(50% - 10px);">
+              <input id="h1i4" required="" type="text">
+              <label class="user-label">_s_t_r</label>
+            </div>
+            <div class="input-group" style="width: calc(50% - 10px);">
+              <input id="h1i5" required="" type="text">
+              <label class="user-label">s_t_r_</label>
+            </div>
+            <div class="input-group" style="width: calc(50% - 10px);">
+              <input id="h1i6" required="" type="number">
+              <label class="user-label">str*</label>
+            </div>
+            <div class="input-group" style="width: calc(50% - 10px);">
+              <input id="h1i7" required="" type="number">
+              <label class="user-label">str/</label>
+            </div>
+            <div class="input-group"  style="width: calc(50% - 10px);">
+              <input id="h1i8" required="" type="text">
+              <label class="user-label">str-(str)</label>
+            </div>
+            <div class="input-group"  style="width: calc(50% - 10px);">
+              <input id="h1i9" required="" type="text">
+              <label class="user-label">str+(str)</label>
+            </div>           
+          </div>                      
+        </div>         
+        <div class="h2Cont">
+          <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center;">
+            <h1 class="subtitulo" style="width: 100%;">Coords Minecraft</h1>
+            <div class="input-group" style="width: 100%;">
+              <input id="h2i1" required="" type="text">
+              <label class="user-label">Coords</label>                 
+            </div>         
+            <div class="center">
+              <p style="margin-left: 15px; margin-right: 15px">×8</p>
+              <input class="resultado" id="h2r1"  placeholder="..." style="width: 9rem;"></input> 
+              <img class="bCopyCoordsMinecraft" id="h2b1" src="./img/copy.svg"></img>            
+            </div>
+            <div class="center">
+              <p style="margin-left: 15px; margin-right: 15px">÷8</p>          
+              <input class="resultado" id="h2r2"  placeholder="..." style="width: 9rem;"></input>             
+              <img class="bCopyCoordsMinecraft" id="h2b2" src="./img/copy.svg"></img>
+            </div>
+          </div>
+        </div>
+        <div class="h3Cont">
+          <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center;">
+            <h1 class="subtitulo" style="width: 100%;">Metrica por pantalla</h1>
+            <p>Se supone que esto tendra que medir lo de una carta e indicar en centimetros una metrica.</p> 
+            <div class="h3Metric" >                  
+            </div>        
+          </div>                      
+        </div>  
+      </div>     
+      <div class="contContacto">
+        <h1 class="textContacto">Escríbeme cuando quieras y para lo que necesites, no suelo tardar más de 8 horas en contestar.</h1>
+        <div class="contContContacto">
+          <div class="contGmail"> 
+            <img class="gmail ico" src="./img/gmail.svg"/>        
+            <a class="gmailA" href="mailto:juanmanueldiazgomez247@gmail.com?subject=Desde jm-247.web.app&body=Hola juanma, " target="_blank">Gmail</a>
+          </div>
+          <div class="contWhatsApp">      
+            <img class="whatsApp ico" src="./img/whatsapp.svg"/>
+            <a class="whatsAppA" href="https://api.whatsapp.com/send/?phone=573229130427&text=Hola juanma, " target="_blank">WhatsApp</a>          
+          </div> 
+          <div class="contDiscord">      
+            <img class="discord ico" src="./img/discord.svg"/>
+            <a class="discordA" >Discord</a>          
+          </div>
+          <div class="discrodInfoCont">       
+            <img class="discordImg" src="./img/png/discord.png"/>            
+          </div>
+        </div>                          
       </div>
-    </div>
-
-      <!-- <div id="realContent">
-        <div class="input-group"> 
-          <input id="rci1" required=""> 
-          <label class="user-label">\(X\)</label>
+      <div class="contJuegos">    
+        <div class="selecccionJuegos selectionCards">
+          <div id="cardj1" class="card">
+            <h2>Tree Line</h2>          
+            <img class="cardImg" src="./img/cards/j1.png"/>          
+          </div>
+          <div id="cardj2" class="card">
+            <h2>Fast Snail</h2>                    
+            <img class="cardImg" src="./img/cards/od.png"/>          
+          </div>
+          <div id="cardj3" class="card">
+            <h2>Minesweeper</h2>                     
+            <img class="cardImg" src="./img/cards/j3.png"/>          
+          </div>
+          <div id="cardj4" class="card">
+            <h2>Sudoku</h2>                    
+            <img class="cardImg" src="./img/cards/od.png"/>          
+          </div>
+          <div id="cardj5" class="card">
+            <h2>Sliterio</h2>                    
+            <img class="cardImg" src="./img/cards/od.png"/>          
+          </div> 
+        </div>         
+        <div class="j1Cont">
+          <h1 id="j1t1" style="font-size: 3rem; margin-left: 1rem;">Tres en raya</h1>        
+          <p id="j1auxTurn" style="display: none;">0</p>
+          <div class="center">          
+            <table class="tableTreLine">
+              <tr>
+                <td><input id="j1i1" class="inputTreLine vLine hLine"></input></td>
+                <td><input id="j1i2" class="inputTreLine vLine hLine"></input></td>
+                <td><input id="j1i3" class="inputTreLine hLine"></input></td>          
+              </tr>          
+              <tr>
+                <td><input id="j1i4" class="inputTreLine vLine hLine"></input></td>
+                <td><input id="j1i5" class="inputTreLine vLine hLine"></input></td>
+                <td><input id="j1i6" class="inputTreLine hLine"></input></td>
+              </tr>
+              <tr>
+                <td><input id="j1i7" class="inputTreLine vLine"></input></td>
+                <td><input id="j1i8" class="inputTreLine vLine"></input></td>
+                <td><input id="j1i9" class="inputTreLine"></input></td>
+              </tr>        
+            </table>
+          </div>
+          <div id="j1contButtons" style="display: flex;">        
+            <button id="j1b1">Reinicio</button>
+          </div>
         </div>
-        <div class="input-group">
-          <input id="rci2" required="" type="number">
-          <label class="user-label">\(\text{Grados de libertad}\)</label> 
-        </div>
-        <p>Distribución normal.</p>
-        <div class="latex inLine" id="rcRes1"></div>
-        <div class="latex inLine" id="rcRes2"></div> 
-        <p>Distribución T-Student.</p>
-        <div class="latex inLine" id="rcRes3"></div>
-        <div class="latex inLine" id="rcRes4"></div>
-        <p>Distribución Chi-Cuadrado.</p> 
-        <div class="latex inLine" id="rcRes5"></div>
-        <div class="latex inLine" id="rcRes6"></div>
-        <div class="endSection">
-          <button id="esb1">Finalizar sección</button>
-        </div>
-      </div> -->
-
-
-      <div style="height: 2rem;"></div>
-    </div>
-    <script type="module" src="./objects/ExtT.js"></script>     
+        
+        <div class="j2Cont">
+          <h1 id="j2t1" style="font-size: 3rem; margin-left: 1rem;">Fast Snail (In development)</h1>
+          <div class="j2Grid"></div>
+        </div>      
+        <div class="j3Cont">
+          <h1 id="j3t1" style="font-size: 3rem; margin-left: 1rem">Minesweeper</h1>    
+          <br>  
+          <div class="center">            
+              <div class="j3Grid">
+              </div>
+              <div class="j3Statistics" style="margin-left: 1rem; width: 9rem; color : red;"> 
+                <p id="j3Statisticsp1" class="j3PStatistics">Tiempo: 1:25</p>
+                <p id="j3Statisticsp2" class="j3PStatistics">Porcentaje: 8%</p>
+                <p id="j3Statisticsp3" class="j3PStatistics">Minas: 16</p>
+                <p id="j3Statisticsp4" class="j3PStatistics">Puntaje: 100</p>                
+              </div>
+          </div>
+          <br> 
+          <div class="j3Options">                 
+            <div class="center">  
+              <div class="input-group"  style="width: 4.3rem">            
+                <input id="j3i1" required="" type="text">
+                <label class="user-label">Alto</label>
+              </div>  
+              <div class="input-group"  style="width: 5.3rem">
+                <input id="j3i2" required="" type="text">
+                <label class="user-label">Ancho</label>              
+              </div>            
+              <button id="j3b1" style="margin-left: 1rem; margin-top: .6rem;">NUEVO JUEGO</button>
+            </div>             
+            <div class="center">
+              <div class="input-group"  style="width: 8rem"> 
+                <input id="j3i3" required="" type="text">
+                <label class="user-label">Jugador</label>                            
+              </div>
+              <button id="j3b2" style="margin-left: 1rem; margin-top: .6rem;">CARGAR</button>
+              <p id="j3p3" style="color: var(--c1); 
+              margin-left: 1rem; 
+              margin-top: .6rem; 
+              opacity: .7;
+              cursor: pointer;">Registrarse</p>
+            </div> 
+          </div>                 
+          <div class="j3NewGamer" style="display: none;"> 
+            <div class="input-group"  style="width: 80%">                                                  
+              <input id="j3ngi1" required="" type="text">
+              <label class="user-label">Nombre completo</label>                            
+            </div>
+            <div style="display: flex;">  
+              <div class="input-group"  style="width: 10.5rem">  
+                <input id="j3ngi2" required="" type="number" autocomplete="off">     
+                <label class="user-label">Codigo de 4 cifras</label>   
+              </div>
+              <button id="j3ngb1" style="margin-left: 1rem; margin-top: 1rem;">Registrar</button>  
+          </div>          
+          </div>
+        </div>  
+        <div class="j4Cont">
+          <h1 id="j4t1" style="font-size: 3rem; margin-left: 1rem;">Sudoku  (In development)</h1> 
+          <div id="j4Grid" class="j4Grid"></div>
+        </div> 
+        <div class="j5Cont"> 
+          <!-- <h1 id="j5t1" style="font-size: 3rem; margin-left: 1rem;">Sliterio</h1>                   -->
+          <div id="j5p5Container"></div>
+        </div> 
+      </div>       
+    </div>            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.1/math.js"></script>     
+    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>      -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://unpkg.com/venn.js"></script> 
+    <script src='https://unpkg.com/feather-icons'></script>        
+    <script type="module" src="./objects/ExtT.js"></script>    
+    <script type="module" src="./js/juanma.js"></script>  
+    <script type="module" src="./js/home.js"></script>   
+    <script type="module" src="./js/codigos.js"></script>
+    <script type="module" src="./js/herramientas.js"></script>
+    <script type="module" src="./js/proyectos.js"></script>
+    <script type="module" src="./js/juegos.js"></script>
+    <script type="module" src="./js/contactos.js"></script>
+    <script type="module">
+      hljs.highlightAll();
+      function copiarAlPortapapeles(texto){
+        navigator.clipboard.writeText(texto)
+      }      
+      feather.replace()
+    </script>
     <script type="module" src="./js/index.js"></script>   
-  </body>
+  </body>     
 </html>
+
+<!-- Sí, se puede usar la fórmula de Faulhaber, que expresa la suma de potencias en términos de polinomios y números de Bernoulli 𝐵𝑗 -->
+
+<!-- npm i dotenv -D -->
+
+<!-- Metrica en centimetros por pantalla (con ajustes de monitor) -->
+
+<!--
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+  <script>
+  async function main() {
+    const pyodide = await loadPyodide();
+    let resultado = await pyodide.runPythonAsync(`
+      def suma(a, b):
+          return a + b
+      suma(2, 3)
+    `);
+    console.log(resultado); // 5
+  }
+  main();
+  </script> 
+-->
+
+<!-- 
+const code = "return 3 * 7;";
+const result = new Function(code)();  // Ejecuta y devuelve 21 en python
+console.log(result); -->
+
+<!-- 
+BigInt(2)**BigInt(247) -->
+
+<!-- <table>
+  <tr>
+    <td class="tdIndex"><a href="https://jm-247.web.app/#2" target="_blank">Juanma</a></td>
+    <td class="tdIndexText">Aquí encontrarás mi currículum y más información sobre mi desempeño como programador.</td>
+    <td class="tdIndexNoBorder">jm-247.web.app/#2</td>
+    <td style="border-color: #0000;"><button onclick="copiarAlPortapapeles(`jm-247.web.app/#2`)">copiar</button></td>
+  </tr>
+  <tr>
+    <td class="tdIndex"><a href="https://jm-247.web.app/#4" target="_blank">Proyectos</a></td>
+    <td class="tdIndexText">Aquí encontrarás los principales proyectos que he realizado y en los que aún sigo trabajando.</td>
+    <td class="tdIndexNoBorder">jm-247.web.app/#4</td>
+    <td style="border-color: #0000;"><button onclick="copiarAlPortapapeles(`jm-247.web.app/#4`)">copiar</button></td>
+  </tr>
+  <tr>
+    <td class="tdIndex"><a href="https://jm-247.web.app/#5" target="_blank">Herramientas</a></td>
+    <td class="tdIndexText">Aquí he dispuesto algunas herramientas que me han sido útiles en algún momento y espero que lo puedan ser para ti.</td>
+    <td class="tdIndexNoBorder">jm-247.web.app/#5</td>
+    <td style="border-color: #0000;"><button onclick="copiarAlPortapapeles(`jm-247.web.app/#5`)">copiar</button></td>
+  </tr>
+  <tr>
+    <td class="tdIndex"><a href="https://jm-247.web.app/#3" target="_blank">Codigos</a></td>
+    <td class="tdIndexText">Aquí encontrarás algunos de los códigos que creo interesantes, y que deberían tener un espacio en este sitio web.</td>
+    <td class="tdIndexNoBorder">jm-247.web.app/#3</td>
+    <td style="border-color: #0000;"><button onclick="copiarAlPortapapeles(`jm-247.web.app/#3`)">copiar</button></td>
+  </tr>
+  <tr>
+    <td class="tdIndex"><a href="https://jm-247.web.app/#ch" target="_blank">P - Cifrado Hill</a></td>
+    <td class="tdIndexText">Este es uno de mis pequeños proyectos ya finalizados. Se trata de codificación usando inversas de matrices transformadas de texto a número y viceversa.</td>1
+    <td class="tdIndexNoBorder">jm-247.web.app/#ch</td>
+    <td style="border-color: #0000;"><button onclick="copiarAlPortapapeles(`jm-247.web.app/#ch`)">copiar</button></td>
+  </tr>
+  <tr>
+    <td class="tdIndex"><a href="https://jm-247.web.app/#h1" target="_blank">H - Editor de texto</a></td>          
+    <td class="tdIndexText">Esta es una herramienta que te brinda algunas pequeñas opciones de edición de texto.</td>
+    <td class="tdIndexNoBorder">jm-247.web.app/#h1</td>
+    <td style="border-color: #0000;"><button onclick="copiarAlPortapapeles(`jm-247.web.app/#h1`)">copiar</button></td>          
+  </tr>
+</table>
+
+// navigator.geolocation.getCurrentPosition(position => {
+//   console.log(position.coords.latitude, position.coords.longitude);
+// });
+
+// console.log("Wtf:", history.length);  
+
+// console.log(navigator.onLine); // true o false
+
+// if ("connection" in navigator) { 
+//     console.log(navigator.connection.effectiveType); // Tipo de conexión (4g, 3g, 2g, slow-2g)
+// }
+
+// console.log("userAgent", navigator.userAgent); // Información sobre el navegador y el sistema operativo
+// console.log("language", navigator.language); // Idioma preferido del usuario
+// console.log("platform", navigator.platform); // Plataforma del sistema operativo (Windows, Mac, Linux)
+// console.log("vendor", navigator.vendor); // Proveedor del navegador (Google Inc., Mozilla, etc.)
+// console.log("onLine", navigator.onLine); // Si el usuario está conectado a internet (true/false)  
+// // background.src = "./img/bg/A.svg" -->
+
+
+<!-- Ramanujan 
+ https://www.cfalindia.com/wp-content/uploads/2023/09/Ramanujan-1.jpg
+\[
+\frac{1}{\pi} = \frac{2\sqrt{2}}{9801} 
+\sum_{k=0}^\infty 
+\frac{(4k)! \, (1103 + 26390k)}{(k!)^4 \, 396^{4k}}
+\] -->
+
+
+<!-- 
+https://www.google.com/search?sca_esv=146f7315d2a83688&q=Euclides&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKEWEvuc0Hbw31oEI7c8o3y7EH2T73cHYgsE1-NZATxMpGR5vj5F1FSpJQGl9M4am3_nVUDQptjf12FdMhIeYwyU9LIc-4dFEghLhAyTcSLgzc6ShlM85x3AlFbXgt_8r_wVQV1UVXRxosPd7BnEAhx91pr3H6k5o-kGN1ly_QbwMeRVct84ATpLNNQsfaXhj3YfghSg&sa=X&ved=2ahUKEwin_u_Cs5SOAxXeTTABHYvJGswQtKgLKAF6BAgdEAE&biw=1920&bih=945&dpr=1#vhid=LonbPG2P2WZAXM&vssid=mosaic
+https://www.google.com/search?sca_esv=146f7315d2a83688&q=Bernhard+Riemann&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKEWEvuc0Hbw31oEI7c8o3y7EH2T73cHYgsE1-NZATxMpGR5vj5F1FSpJQGl9M4am33cFZjIhzCjcQ1HTUD96sEKHRCC8Dd8Ipnx-iX4Xq8hMsBkx7E7brLrdNdaffzbpAMjC-5mSkMAzcjxI4p-4Mf8c-GRlIuD85uHbsrnCQtoYvJ9PtA&sa=X&ved=2ahUKEwiKrM6zs5SOAxVXRjABHWNFKU0QtKgLKAF6BAgeEAE&biw=1920&bih=945&dpr=1#vhid=WE47BXM-6eL4lM&vssid=mosaic
+https://www.google.com/search?sca_esv=146f7315d2a83688&q=Fibonacci&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKEWEvuc0Hbw31oEI7c8o3y7EH2T73cHYgsE1-NZATxMpGR5vj5F1FSpJQGl9M4am3709kXxFlYHA-KUl_i_ojuGrzbQ44-Tx-NloY6t_ZtlZwnW1j4n63Q6Tm1nv3TQNKvr4Y55CnmM1ouLjPcnu4LPR57KUyGxnMpp6ky6rxEP7soIFkn6befDHDxOv8UuQ8t_acFY&sa=X&ved=2ahUKEwitmp_fspSOAxUTRTABHVHgGToQtKgLKAF6BAgZEAE&biw=1920&bih=945&dpr=1#vhid=Yg_FziMyjn0LjM&vssid=mosaic
+https://www.google.com/search?sca_esv=146f7315d2a83688&q=Isaac+Newton&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKEWEvuc0Hbw31oEI7c8o3y7EH2T73cHYgsE1-NZATxMpGR5vj5F1FSpJQGl9M4am3709kXxFlYHA-KUl_i_ojuEuVN9QL1P066dJEHMqVwEzlYgXNVdNsL2T8_NeYr4xCdP_KipN-Gi8z4Rwbnnw02NNNWhE0nxM2AMFD7-dU7es0ewP5krb_3_3vN7IfGZJXM6wI0Y&sa=X&ved=2ahUKEwif2MfJspSOAxVPRDABHV7JAQ4QtKgLKAF6BAgYEAE&biw=1920&bih=945&dpr=1#vhid=Sq9KXig_jdWkGM&vssid=mosaic
+https://www.google.com/search?sca_esv=146f7315d2a83688&q=Schwarz+matematico&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKEWEvuc0Hbw31oEI7c8o3y7EH2T73cHYgsE1-NZATxMpEZX5iGApNXoQtOTNvMiIjA2GDflTDR8y-Fvfz_MJ247Nc80HHkufWRHEU_CC9Zi3qc9ZC1n1zijXKF7Dj1lNnYW7aQq627nAKUwAn0ZSP0Vn9fuQ3OXvkgPk4pWW8WAWQHBJ0w&sa=X&ved=2ahUKEwjy55KtspSOAxVxTDABHSM2GhIQtKgLKAF6BAglEAE&biw=1920&bih=945&dpr=1#vhid=wHKkGw9VSjsgBM&vssid=mosaic
+https://www.google.com/search?sca_esv=146f7315d2a83688&q=Cauchy&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKEWEvuc0Hbw31oEI7c8o3y5Az9dJyKxsfx0xXZG1h0pUz2mD2FBYPszCrWoFsahq8mGVRfAq-zXxd6CtMAAR_miz0_zW9GUAWkVPYkeEIQjjpgDpEZQuwSvwdjhyt96SLz2swsXebqzR8nNb6seZXTDB_J8M9pv4mwj1yCVg28LRPVT-Y2v9s3BBUaWlKVchpTO46TQ&sa=X&ved=2ahUKEwib57GaspSOAxXGRDABHZt8GlsQtKgLKAF6BAghEAE&biw=1920&bih=945&dpr=1#vhid=o9cZsnVPVN-a9M&vssid=mosaic
+https://www.google.com/search?sca_esv=146f7315d2a83688&q=Carl+Friedrich+Gauss&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKEWEvuc0Hbw31oEI7c8o3y7EH2T73cHYgsE1-NZATxMpGR5vj5F1FSpJQGl9M4am33cFZjIhzCjcQ1HTUD96sEKHRCC8Dd8Ipnx-iX4Xq8hMsBkx7E7brLrdNdaffzbpAMjC-5mSkMAzcjxI4p-4Mf8c-GRlIuD85uHbsrnCQtoYvJ9PtA&sa=X&ved=2ahUKEwjpxLz1sZSOAxXffDABHRqkISEQtKgLKAF6BAgbEAE&biw=1920&bih=945&dpr=1#vhid=_6BOhHQVeA28PM&vssid=mosaic
+https://www.google.com/search?sca_esv=146f7315d2a83688&q=leibniz+matematico&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKEWEvuc0Hbw31oEI7c8o3y7EH2T73cHYgsE1-NZATxMpEZX5iGApNXoQtOTNvMiIjNv1TV9duzCYUUDSdo1Outo95ycukrcGqgQwtSOLctIDA8tyk5W2e60hmOKmMzR56RYyvEwxSmyhnxLYRUDQLE9_vHaaDNcMz8yKubCBhKvfNmR7GpJ0D3IEihz83n7JxPH9dEI&sa=X&ved=2ahUKEwjj_qezsZSOAxXFtYQIHXh0DvcQtKgLKAF6BAgfEAE&biw=1920&bih=945&dpr=1#vhid=p1HJtO6TLE6tOM&vssid=mosaic
+https://www.google.com/search?sca_esv=146f7315d2a83688&q=euler&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKEWEvuc0Hbw31oEI7c8o3y4MyqtV5m4rLCGDMco7dQbsONdCIMLjZ0gi6g9hpm4RRqlLKTg150ySkK5AmGl8lLGXSM5o8htNyIkqaMTRrt36RgpLXsTkjHa2ZTeh-IkI3rrxF70kqhCywmjQvLUhmTf7lLAt9slwU46y3sXGZZPUwp2ER49kvCCRxp6jfh9gZZYCsFM&sa=X&ved=2ahUKEwiHvp_GsZSOAxWDRTABHbrsJZcQtKgLKAF6BAgcEAE&biw=1920&bih=945&dpr=1#vhid=tXfIWKEDW8KG7M&vssid=mosaic
+https://www.google.com/search?sca_esv=146f7315d2a83688&q=Karl+Weierstrass&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKEWEvuc0Hbw31oEI7c8o3y5Az9dJyKxsfx0xXZG1h0pUoMwDc8hffmODc8-BbDagB0FLuHjMmUobhVoAPOgnkS1vDeqEfs4-HEotZMNjg60DBi8H2Py6n-OCpfTq2p_dpn_Jm7w00kh_FmntWv46wVqjnr3gCpy-sOyohiD8aF-lnmoiPpNe5m52l0h8bWAXJa-Eoxw&sa=X&ved=2ahUKEwjs54GVsZSOAxUhSjABHSbyNRYQtKgLKAF6BAghEAE&biw=1920&bih=945&dpr=1#vhid=5-u8OmR3ZLFaFM&vssid=mosaic 
+-->
+
+
+<!-- 
+Mediante index.js y firebase almacenar la ultima pagina que se habrio y quedarse en esa. (permitir bloquearla) 
+-->
+<!-- 
+Con la misma logica de lo anterior tambien poner de primero en la distribucion de cartas a los proyectos que mas se habren 
+-->
+
+ <!-- 
+def raiz_cuadrada_heron_tol(a, x1=1.0, tolerancia=1e-10):
+    x = x1
+    iteracion = 0
+    while True:
+        siguiente = (x + a / x) / 2
+        if abs(siguiente - x) < tolerancia:
+            break
+        x = siguiente
+        iteracion += 1
+        print(f"Iteración {iteracion}: x = {x}")
+    return siguiente
+
+# Ejemplo:
+aprox = raiz_cuadrada_heron_tol(2, x1=1, tolerancia=1e-12)
+print(f"\nAproximación final: {aprox}")
+
+def raiz_cuadrada_heron(a, x1=1.0, iteraciones=10):
+    x = x1
+    for i in range(iteraciones):
+        x = (x + a / x) / 2
+        print(f"Iteración {i+1}: x = {x}")
+    return x
+
+# Ejemplo:
+aprox = raiz_cuadrada_heron(10, x1=3, iteraciones=5)
+print(f"\nAproximación final: {aprox}") 
+-->
