@@ -1,0 +1,328 @@
+#home {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#homeIB {
+    display: none;
+    position: absolute;
+    width: 2.4rem;
+    top: 1rem;  
+    left: 1rem;
+    cursor: pointer;
+}
+
+.homeIngreso {
+    display: flex;
+}
+
+.homei1 {     
+    margin-left: 0rem; 
+    margin-top: 1rem;
+}
+
+#homei1 {     
+    width: 3.1rem; 
+}
+
+#homeb2 {
+    margin-left: .7rem;  
+    margin-top: 1.4rem;
+}
+
+#loginArpia {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: .8rem;
+    padding-bottom: .5rem;
+    padding-right: .5rem;
+    font-size: 1.2rem;
+    background: var(--c1);
+    color: var(--c3);
+    border-radius: 1rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; 
+}
+
+#loginArpia:hover {
+    background: var(--c2);     
+    transform: scale(1.2) translateX(-0.3rem) translateY(-0.3rem);
+}
+
+.loginPanel {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: rgba(0,0,0,0.95);
+   transform: scale(0);
+   opacity: 0;
+   pointer-events: none;
+   transition: transform 0.5s cubic-bezier(.25,.8,.25,1),
+               opacity 0.5s;
+   transform-origin: bottom right;
+}
+
+.loginPanel.active {
+   transform: scale(1);
+   opacity: 1;
+   pointer-events: auto;
+}
+
+@keyframes slideUp {
+   from { opacity: 0; transform: translateY(50px); }
+   to   { opacity: 1; transform: translateY(0); }
+}
+
+.panel {
+    background: var(--c3);
+    border-radius: 1rem;   
+    padding: 2rem;    
+    padding-bottom: 2.3rem;    
+    border: .2rem solid var(--c2);
+    transform: translateY(50px);
+    animation: slideUp 0.5s ease forwards;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+}
+
+.buttonLoginPanel {
+    margin-top: .4rem;
+    margin-left: 1rem;
+}
+
+.loginArpiaInput{    
+    width: 12rem;
+}
+
+
+/* A R P I A */
+
+#contArpia {
+    display: none; 
+    margin-top: 1rem;
+    /* padding-top: 4rem; */
+}
+
+.ap1 {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+#ab1, #ab2 {   
+    margin-right: 1rem;
+    margin-top: .8rem;  
+}
+
+.aListItem {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: .8rem; 
+    background-color: #555;
+    padding: .5rem;
+    border-radius: .5rem; 
+    text-align: center;
+}
+
+.aListItem p{
+    font-size: 1.2rem;
+}
+
+.aListStatus{
+    position: absolute;
+    right: 1rem;     
+    margin-top: -1.8rem;
+    margin-right: 1rem;  
+    background: #555;
+    padding: .4rem;
+}
+
+ /* Z O R R O */
+
+#contZorro{    
+    margin-top: 1rem;
+    display: flex;
+    width: 100vw;    
+    align-items: center;
+    flex-direction: column;
+}
+
+#zh1 {
+    width: 100vw;
+    text-align: center; 
+}
+
+#zList {    
+    width: max-content;    
+}
+
+.zListItem {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: .8rem; 
+    background-color: var(--c3);    
+    padding: .5rem;
+    border-radius: .5rem; 
+    text-align: center;
+    cursor: pointer;      
+    border: .3rem solid rgba(255, 255, 255, 0.5); 
+    box-shadow: inset -5px -5px 10px rgba(255, 255, 255, 0.04);
+}
+
+.zListItem p {    
+    color: var(--c2); 
+}
+
+.zListItem:hover { 
+    background-color: var(--c1);
+    transform: scale(1.05); 
+}
+
+
+
+.zListItem:hover p {    
+    color: var(--c2);   
+}
+
+.zListItem p{
+    font-size: 1.2rem;
+}
+
+
+/* C O N T E N T */
+
+#realContent {
+    margin-top: 1rem; 
+    display: none; 
+}
+
+#realContent p {
+    margin-top: 2rem;
+    margin-left: 1rem;     
+}
+
+.latex {
+    margin-top: .6rem;
+    margin-left: 1rem;    
+    color: var(--c2); 
+}
+
+/* E N D    S E C T I O N */
+
+.endSection {
+    width: 100%;  
+    margin-top: 5rem; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>> */
+/* >>>>>>>>>>>>>>>>>>>>>>> */
+/* >>>>>>>>>>>>>>>>>>>>>>> */
+/* E L E M E N T S . C S S */
+/* >>>>>>>>>>>>>>>>>>>>>>> */
+/* >>>>>>>>>>>>>>>>>>>>>>> */
+/* >>>>>>>>>>>>>>>>>>>>>>> */
+
+.button_container {
+    display: flex;
+    flex-direction: row;     
+    height: 1.5rem;     
+    align-items: center;    
+    width: max-content;
+}
+
+#h_r_container {
+    /* height: 2rem;
+    padding: 1rem;  */
+}
+
+.button_button {      
+    color: var(--c2);
+    height: 1.5rem;
+    border: none;    
+    border-radius: .3rem;
+    background-color: var(--ct);
+    padding: 1rem; 
+    padding-left: .2rem; 
+    padding-right: .2rem; 
+    cursor: pointer;    
+    display: flex;
+    justify-content: center;
+    align-items: center;        
+    font-family: ps_b; 
+}
+
+.button_button:hover {
+    background-color: var(--ce);    
+}
+
+#h_r_button_button {      
+    background-color: var(--c2);    
+    padding: 1rem; 
+    padding-left: .5rem; 
+    padding-right: 0rem;     
+}
+
+#h_r_button_button:hover {
+    background-color: var(--c1);    
+}
+
+#h_r_button_button #h_r_button_text {    
+    color: var(--c1);
+}
+
+#h_r_button_button:hover #h_r_button_text {    
+    color: var(--c2);
+}
+
+#h_r_button_text {    
+    font-size: 1.2rem; 
+}
+
+.button_ico {
+    height: 1.4rem;   
+}
+
+#h_r_button_ico {
+    height: 1.6rem;  
+}
+
+.button_text {      
+    white-space: nowrap;
+    margin-left: .2rem; 
+    margin-right: .8rem;  
+    font-size: .9rem; 
+    font-family: ps_b;  
+    display: none;
+}
+
+.button_level { 
+    display: none;
+    position: absolute;
+    font-size: 1rem; 
+    margin-left: 3rem;
+    background-color: var(--c2);
+    color: var(--c3);
+    padding: .2rem;
+    padding-left: .4rem;
+    padding-right: .4rem; 
+    border-radius: .5rem;
+    z-index: 1000;
+    font-size: .9rem; 
+    font-family: ps_b;  
+}

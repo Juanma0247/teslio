@@ -1,0 +1,263 @@
+
+#login_cont {
+    width: 100vw; 
+    position: absolute;
+    height: 100vh;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 100%;
+    padding: 40px;
+}
+
+#authView {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center; 
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h1 {
+    color: var(--c3); 
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.auth-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.login_buttons_container {
+    display: flex;
+    align-items: center;    
+    margin-top: 1rem;
+}
+
+#loginForm {
+    width: 100%;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;     
+    margin-right: 1rem; 
+}
+
+.tab-btn {
+    width: 10rem;
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: var(--ct);
+    color: var(--c1);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;    
+}
+
+.tab-btn.active {    
+    color: var(--ct);    
+}
+
+.tab-btn.active:hover {    
+    background-color: var(--ct);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    color: var(--c2);
+    font-weight: 600;
+    margin-bottom: 8px;    
+}
+
+.form-group input {    
+    padding: 12px 15px;
+    border: 2px solid var(--c2);
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--c1);
+}
+
+#login_new_botton {
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    width: 100%;    
+    background: var(--c1);
+    color: var(--c2);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;    
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+    background-color: var(--c2);
+    color: var(--c1); 
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.divider {
+    text-align: center;
+    margin: 25px 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: #e0e0e0;
+}
+
+.divider span {
+    background: white;
+    padding: 0 15px;
+    position: relative;
+    color: #999;
+    font-size: 14px;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+    align-items: center;    
+}
+
+.social-buttons label {
+    color: var(--c4);    
+    font-size: 0.9rem;
+}
+
+.btn-social {    
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.btn-social:hover {
+    border-color: var(--c1);    
+}
+
+.btn-google {
+    color: #db4437;
+}
+
+.message {
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: none;
+}
+
+.message.error {
+    background: #fee;
+    color: #c33;
+    border: 1px solid #fcc;
+}
+
+.message.success {
+    background: #efe;
+    color: #3c3;
+    border: 1px solid #cfc;
+}
+
+.hidden {
+    display: none;
+}
+
+.dashboard {
+    text-align: center;
+}
+
+.user-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    background: linear-gradient(135deg, var(--c1) 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.user-email {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.btn-logout {
+    background: #dc3545;
+    margin-top: 20px;
+}
+
+.btn-logout:hover {
+    background: #c82333;
+}
+
+.loading {
+    text-align: center;    
+    margin-top: 1rem;    
+    font-family: ps_b;
+    font-size: 1rem;
+    color: var(--c2); 
+}

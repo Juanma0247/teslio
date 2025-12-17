@@ -47,17 +47,21 @@
 }
 
 * {    
-    --c1: #008888 ;            
-    --c2: #ffffff;
-    --c3: #000000; 
+    --c1: #088 ;            
+    --c1: #888;
+    --c2: #fff;
+    --c3: #000;
     /* --c2: #000;
-    --c3: #fff; */
-    --c4: #888888; 
+    --c3: #fff;      */
+    --c4: #888;
+    --ce: #333;  
     --ct: #00000000;
+    --c1: #4A90E2;
+    --c2: #D9EAFB; 
+    --c3: #1F3A56;
     margin: 0px;
     padding: 0px;
     border: 0px;      
-    font-family: ps;
 }
 
 ::-webkit-scrollbar {
@@ -89,16 +93,14 @@
 
 body {
     background-color: var(--c3);
-    height: 100vh; 
+    height: 100vh;
 }
 
 .background {
     position: absolute;
-    z-index: -1;
-    margin-top: -3rem;
-    opacity: 10%;        
+    z-index: -1;        
     width: 100vw;
-    /* height: min-content; */
+    height: 100vh;
 } 
 
 .contenedor {    
@@ -172,40 +174,30 @@ a:hover {
     color: var(--c1);
 }
 
-button {
-    height: max-content;
-    font-family: ps;    
-    font-size: 1rem;
-    cursor: pointer;
+button {      
     color: var(--c1);
-    background-color: var(--c3);   
-    cursor: pointer;
-    padding: .4rem;      
-    border-radius: .5rem;
-    border: .2rem solid var(--c1);
-    box-shadow: .2rem .2rem 0rem var(--c1);  
-    background-color: var(--c3);
+    height: 1.5rem;
+    border: none;    
+    border-radius: .3rem;
+    background-color: var(--c2);
+    padding: 1rem; 
+    padding-left: .5rem; 
+    padding-right: .5rem; 
+    cursor: pointer;    
+    display: flex;
+    justify-content: center;
+    align-items: center;        
+    font-family: ps_b; 
+    font-size: 1rem;
 }
 
-@keyframes click {
-    0% {
-        transform: translateX(0rem) translateY(0rem);        
-        box-shadow: .2rem .2rem 0rem var(--c1);      
-    }
-    50% {
-        transform: translateX(.2rem) translateY(.2rem);        
-        box-shadow: 0rem 0rem 0rem var(--c1);      
-    }
-    100% {
-        transform: translateX(0rem) translateY(0rem);
-        box-shadow: .2rem .2rem 0rem var(--c1);  
-    }
+button:hover {
+    background-color: var(--c1);
+    color: var(--c2); 
 }
 
-button:active {
-    animation: click .3s forwards;  
-    box-shadow: var(--ct) 2px 2px;
-}
+
+
 
 .labelForElementCheck {  
     margin-top: 1.2rem;    
@@ -256,13 +248,12 @@ input {
     width: calc(100% - 2.5rem);        
     font-family: ps;
     border: solid 1.5px var(--c4);
-    border-radius: .3rem;
+    border-radius: 1rem;
     background: none;
-    padding: .3rem;
-    padding-left: .5rem;   
+    padding: 1rem;    
     font-size: 1rem;
     color: var(--c2);
-    margin-top: .8rem;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
 }
 
 input:focus, input:valid {
@@ -270,17 +261,11 @@ input:focus, input:valid {
     border: 1.5px solid var(--c1);
 }
 
-input:focus ~ label, input:valid ~ label {        
-    transform: translateY(-40%) scale(0.8);   
+input:focus ~ label, input:valid ~ label {
+    transform: translateY(-50%) scale(0.8);
     background-color: var(--c3);
-    padding: .1rem;
+    padding: 0 .2em;
     color: var(--c1);
-    padding-left: .5rem;    
-    padding-right: .5rem;    
-    border: .1rem solid var(--c1);
-    border-bottom: .1rem solid var(--c4);
-    border-radius: .3rem .3rem 0rem 0rem; 
-    left: 0rem; 
 }
  
 input[type=number]::-webkit-inner-spin-button,
@@ -288,60 +273,23 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0
 }
-
 input[type=number] {
     -moz-appearance: textfield
 }
-
-input[type="range"] {
-    margin-top: 0rem;
-}
-
-.user-label {
-    font-family: ps_b;
-    position: absolute;
-    left: 1rem; 
-    color: var(--c2);
-    pointer-events: none;
-    transform: translateY(1rem);    
-}
-
-.user-label::after {
-    color: var(--c1);
-}
-
-textarea {
-    margin-top: 10px;
-    margin-left: 10px;
-    width: calc(100% - 3.2rem);
-    font-family: ps;
-    border: solid 1.5px var(--c4);
-    border-radius: 1rem;
-    background: none;
-    padding: 1rem;    
-    font-size: 1rem;
-    color: var(--c2);
-}
-
-textarea:focus, input:valid {
-    outline: none;
-    border: 1.5px solid var(--c1);
-}
-
-
 .custom-controls {
     display: flex;
     flex-direction: row; 
     position: absolute;
-    right: 4rem;
-    top: 0.45rem;    
+    right: 4.8rem; 
+    top: .3rem;
+    bottom: .3rem;
     width: 2rem 
 }
-
 .custom-controls button {
     margin-left: .3rem; 
     flex: 1;
-    background: transparent;    
+    background: transparent;
+    /* border: none; */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -349,10 +297,9 @@ textarea:focus, input:valid {
     border-radius: .5rem;
     transition: background 0.2s
 }
-
 .custom-controls button svg {
-    width: 1rem; 
-    height: 1rem;
+    width: 1.4rem; 
+    height: 1.4rem; 
     fill: var(--c4)  
 }
 
@@ -410,11 +357,49 @@ td {
     border-right-width: 2px;
 }
 
+.user-label {
+    font-family: ps_b;
+    position: absolute;
+    left: 15px;
+    color: var(--c2);
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.user-label::after {
+    color: var(--c1);
+}
+
+textarea {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: calc(100% - 3.2rem);
+    font-family: ps;
+    border: solid 1.5px var(--c4);
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;    
+    font-size: 1.2rem; 
+    color: var(--c2);
+}
+
+textarea:focus, input:valid {
+    outline: none;
+    border: 1.5px solid var(--c1);
+}
 
 .center {
     display: flex;
     justify-content: center;
     align-items: center;        
+}
+
+.right {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;        
 }
 
 .marginLR {    
@@ -452,116 +437,6 @@ td {
     height: 1rem;    
     width: 100%;
 }
-
-input[type="range"] {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	width: 200px;
-	background-color: transparent;
-    cursor: pointer; 
-	&:focus {
-		outline: none;
-	}
-}
-
-input[type="range"]::-webkit-slider-runnable-track {
-	-webkit-appearance: none;
-	appearance: none;
-	height: 3px;
-	background: var(--c1);
-	background: -webkit-linear-gradient(
-		left,
-		var(--c1) 0%,
-		var(--c2) 100%
-	);
-	background: linear-gradient(
-		to right,
-		var(--c1) 0%,
-		var(--c2) 100%
-	);
-}
-
-input[type="range"]::-moz-range-track {
-	-moz-appearance: none;
-	appearance: none;
-	height: 3px;
-	background: var(--c1);
-	background: -moz-linear-gradient(
-		left,
-		var(--c1) 0%,
-		var(--c2) 100%
-	);
-	background: linear-gradient(
-		to right,
-		var(--c1) 0%,
-		var(--c2) 100%
-	);
-}
-
-input[type="range"]::-ms-track {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	height: 3px;
-	background: var(--c1);
-	background: -moz-linear-gradient(
-		left,
-		var(--c1) 0%,
-		var(--c2) 100%
-	);
-	background: -webkit-linear-gradient(
-		left,
-		var(--c1) 0%,
-		var(--c2) 100%
-	);
-	background: linear-gradient(
-		to right,
-		var(--c1) 0%,
-		var(--c2) 100%
-	);
-}
-
-input[type="range"]::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	border: none;
-	border-radius: 50%;
-	height: 20px;
-	width: 20px;
-	position: relative;
-	bottom: 8px;
-	background: var(--c1);
-	box-shadow: 0px 3px 5px 0px var(--c3);
-}
-
-input[type="range"]::-moz-range-thumb {
-	-moz-appearance: none;
-	appearance: none;
-	border: none;
-	border-radius: 50%;
-	height: 20px;
-	width: 20px;
-	position: relative;
-	bottom: 8px;
-	background: var(--c1);
-	box-shadow: 0px 3px 5px 0px var(--c3);
-}
-
-input[type="range"]::-ms-thumb {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	border: none;
-	border-radius: 50%;
-	height: 20px;
-	width: 20px;
-	position: relative;
-	bottom: 8px;
-	background: var(--c1);
-	box-shadow: 0px 3px 5px 0px var(--c3);
-}
-
 
   /* //////////////////////////////////////////// */
   /* //////////////////////////////////////////// */
@@ -644,4 +519,8 @@ input[type="range"]::-ms-thumb {
     border: var(--c1) 2px solid;    
     box-shadow: 3px 3px 0px var(--c1), 3px 3px 20px var(--c4);      
     transform: translateX(-3px) translateY(-3px);  
+  }
+
+  label {
+    font-family: ps_b;    
   }

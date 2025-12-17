@@ -1,0 +1,238 @@
+
+.container_form {
+    width: 100%;
+}
+
+.toolbar {
+    background-color: var(--c3);
+    border: .1rem solid var(--ce);
+    border-radius: .5rem;
+    padding: 0.3rem;
+    padding-left: .6rem; 
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.toolbar-group {
+    display: flex;
+    gap: 0.3rem;
+    padding-right: 0.5rem;
+    border-right: 2px solid var(--c1);
+}
+
+.toolbar-group:last-child {
+    border-right: none;
+}
+
+.form_button_img {
+    width: 1.6rem; 
+    height: 1.6rem; 
+    cursor: pointer;
+}
+
+.form_button_img_normal_style {
+    width: 1.1rem; 
+}
+
+.editor-container {
+    background-color: var(--c3);
+    border: .1rem solid var(--ce);
+    border-radius: .5rem;
+    padding: 0.3rem;
+    padding-left: .6rem;     
+    border-radius: .5rem;    
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.editor-content {
+    flex: 1;    
+    outline: none;
+    overflow-y: auto;
+    color: var(--c2);
+    font-family: ps;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.editor-content:empty:before {
+    content: attr(data-placeholder);
+    color: var(--c4);
+}
+
+/* Estilos para el contenido */
+.editor-content h1, h2, h3, h4, h5, h6 { 
+    color: var(--c1);    
+    font-family: ps_b;    
+    cursor: text;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.editor-content h1 { 
+    font-size: 1.8rem; 
+    /* margin: 1rem 0; */
+    text-align: center;
+}
+
+.editor-content h2 { 
+    font-size: 1.6rem; 
+    /* margin: 1rem 0; */    
+}
+
+.editor-content h3 { 
+    font-size: 1.4rem; 
+    /* margin: 0.83em 0; */    
+}
+
+.editor-content h4 { 
+    font-size: 1.2rem; 
+    /* margin: 0.83em 0; */    
+}
+
+.editor-content p {
+    margin: -0.5em 0;
+}
+
+.editor-content strong {
+    font-family: ps_b; 
+    font-weight: bold;
+}
+
+.editor-content em {
+    font-style: italic;
+}
+
+.editor-content code {
+    background-color: var(--c3);
+    border: 1px solid var(--c1);
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-family: cC, 'Courier New', monospace;
+    color: var(--c2);
+}
+
+.editor-content pre {
+    background-color: var(--c3);
+    border: 1.5px solid var(--c1);
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow-x: auto;
+    margin: 1em 0;
+}
+
+.editor-content pre code {
+    background: none;
+    padding: 0;
+    border: none;
+}
+
+.editor-content ul, .editor-content ol {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+.editor-content li {
+    margin: 0.5em 0;
+}
+
+.editor-content blockquote {
+    border-left: 4px solid var(--c1);
+    padding-left: 15px;
+    margin: 1em 0;
+    color: var(--c4);
+}
+
+.editor-content a {
+    color: var(--c1);
+    text-decoration: underline;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--c3);
+    border: 2px solid var(--c1);
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+}
+
+.modal-content h2 {
+    color: var(--c1);
+    font-family: ps_b;
+    margin-bottom: 1rem;
+}
+
+.modal-content input, .modal-content textarea {
+    width: calc(100% - 2rem);
+    font-family: ps;
+    border: solid 1.5px var(--c4);
+    border-radius: 0.5rem;
+    background: var(--c3);
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: var(--c2);
+    margin: 0.5rem 0;
+}
+
+.modal-content input:focus, .modal-content textarea:focus {
+    outline: none;
+    border: 1.5px solid var(--c1);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.modal-buttons button {
+    height: max-content;
+    font-family: ps;    
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--c1);
+    background-color: var(--c3);   
+    padding: 0.4rem 0.8rem;      
+    border-radius: 0.5rem;
+    border: 0.2rem solid var(--c1);
+    box-shadow: 0.2rem 0.2rem 0rem var(--c1);
+}
+
+@media (max-width: 768px) {
+    .toolbar {
+        padding: 0.5rem;
+    }
+    
+    .toolbar button {
+        font-size: 0.8rem;
+        min-width: 2rem;
+        height: 2rem;
+    }
+    
+    .editor-content {
+        padding: 1rem;
+    }
+}

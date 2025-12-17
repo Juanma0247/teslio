@@ -5,7 +5,7 @@ class Background {
         const r = 0;      
         const g = Math.floor(Math.random() * 100) + 100;  
         const b = Math.floor(Math.random() * 200) + 55; 
-        const a = Math.random() * 0.1 + 0.3 //+ 1;
+        const a = Math.random() * 0.01 + 0.02 //+ 1;
         return `rgba(${r}, ${g}, ${b}, ${a})`;
       }; 
   

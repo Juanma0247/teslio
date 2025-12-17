@@ -1,0 +1,234 @@
+.header {
+	background: linear-gradient(135deg, #111 0%, #000 100%);
+	padding: 1rem 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 4px 20px rgba(0, 136, 136, 0.3);
+	z-index: 10;
+}
+
+.header-left {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.status {
+	padding: 0.6rem 1.2rem;
+	border-radius: 8px;
+	border: 2px solid var(--c1);
+	background: rgba(0, 136, 136, 0.1);
+	color: var(--c1);
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+.status.ready {
+	border-color: #27c93f;
+	color: #27c93f;
+	background: rgba(39, 201, 63, 0.1);
+}
+
+.info-stats {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding-right: 1rem;
+	font-size: 0.85rem;
+}
+
+.info-stats span {
+	color: var(--c4);
+}
+
+.info-stats .value {
+	color: var(--c1);
+	font-weight: 600;
+	margin-left: 0.3rem;
+}
+
+.tool_container {
+    width: 100%;
+    height: 100%; 
+}
+
+/* SPLIT CONTAINER */
+.tool-split-container {
+	flex: 1;
+	display: flex;
+	overflow: hidden;
+	border: .1rem solid var(--ce); 
+	border-radius: .5rem; 
+}
+
+.tool-editor-panel {
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.tool-output-panel {
+	background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.tool-divider {
+	width: 1.5rem;
+	background: var(--ce);
+	cursor: col-resize;
+	position: relative;	
+}
+
+.tool-code-block {
+	overflow: hidden;	
+	background: var(--ccode);
+}
+
+.tool_ico_button {
+	width: 1rem;	
+}
+
+.tool-block-run-btn,
+.tool-block-delete-btn,
+.tool-block-copyl-btn,
+.tool-block-copyr-btn {
+	display: flex;
+	font-weight: 600;
+	width: 1.5rem;
+	height: 3rem;
+	cursor: pointer;
+	margin-left: -1.5rem;
+	font-size: 1.3rem;
+	position: absolute;
+	border: 0;
+	background: var(--ccode);
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+}
+
+.tool-block-run-btn:hover,
+.tool-block-delete-btn:hover,
+.tool-block-copyl-btn:hover,
+.tool-block-copyr-btn:hover {	
+	background: var(--ccode);
+}
+
+.tool-block-copyr-btn { margin-top: 3rem; }
+.tool-block-delete-btn { margin-top: 5.5rem; }
+.tool-block-run-btn { margin-top: 8rem; } 
+
+/* EDITOR */
+.tool-editor-wrapper {
+	min-height: 300px; 
+	border-bottom: 0.8rem var(--ccode) solid;
+	border-top: 0.8rem var(--ccode) solid;
+}
+
+/* OUTPUT */
+.output-header {
+	display: flex;
+}
+
+.output-content {
+	padding: .2rem .4rem;
+	font-family: Consolas, Monaco, monospace;
+	font-size: 0.9rem;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	min-height: 60px;
+	color: var(--c2);
+}
+
+.output-content.error {
+	color: #ff6b6b;
+	background: var(--ccode);
+	border-left: 4px solid #ff6b6b;
+}
+
+.output-content.executing {
+	color: var(--c1);
+}
+
+/* PLOTS */
+.tool-plots-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.tool-plot-item {
+	background: var(--ct);
+}
+
+.tool-plot-header {
+	position: relative;
+	height: 0;
+	top: 0.3rem;
+	right: 0.5rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.tool-plot-buttons {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.tool-download-btn {
+	padding: 0.4rem 0.8rem;
+	border-radius: 6px;
+	border: none;
+	font-weight: 600;
+	font-size: 0.8rem;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.tool-download-btn.png,
+.tool-download-btn.svg {
+	background: var(--c1);
+	color: white;
+	opacity: 0.5;
+}
+
+.tool-download-btn:hover {
+	transform: translateY(-2px);
+	opacity: 0.9;
+}
+
+.tool-plot-image {
+	width: 100%;
+	display: block;
+	background: white;
+}
+
+/* ADD BLOCK BUTTON */
+.tool-add-button-cont {
+	margin-top: 0.4rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+    height: 2rem;
+}
+
+.tool-add-block-btn {
+	text-align: center;
+	color: var(--c1);
+	background-color: var(--c2);
+	cursor: pointer;
+    height: 2rem;
+    width: 9rem; 
+}
+
+.tool-add-block-btn:hover {
+	color: var(--c2);
+	background-color: var(--c1);
+}
+
+.tool_sidebar {
+    display: none; 
+}
