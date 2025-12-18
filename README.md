@@ -25,11 +25,10 @@ git config --global user.name "you_user"
 git config --global user.email "you_mail"
 ```
 
-## Clonar repositorio e ingresar
+## Clonar repositorio e ingresar a la carpeta
 ```
 git clone https://github.com/Juanma0247/teslio.git
 cd teslio
-git pull origin main
 ```
 
 ## Verificación
@@ -38,12 +37,15 @@ git status
 ```
 
 # Sincronización
-**Lo siguiente VSC con *Source Control* lo hace despues de iniciar sección**
+<img width="348" height="725" alt="image" src="https://github.com/user-attachments/assets/7586e12c-294b-4637-b04d-09847f9124a1" />
+
+Lo siguiente VSC con *Source Control* lo hace despues de iniciar sección y sincronizar el primer cambio, pero ejecutalo una vez.
 
 ---
 > **Simpre antes de iniciar**
->
+>```
 >git pull origin main
+>```
 >
 >**Siempre al terminar**
 >```
@@ -51,15 +53,3 @@ git status
 >git commit -m "Aquí di cambios hiciste."
 >git push
 >```
->
->**Configurar el hábito**
->```
->git pull (al empezar)
->git push (al terminar)
->```
->VS Code lo hace con botones:
->```
->Sync Changes
->Pull / Push
->```
----
