@@ -9,7 +9,6 @@ class Tool {
 		this.editors = {}
 		this.currentFile = null
 		this.installing = false
-
 		this.init()
 	}
  
